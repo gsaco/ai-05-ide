@@ -1,0 +1,34 @@
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,booktabs,graphicx,listings,tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\definecolor{ink}{HTML}{122838}
+\definecolor{teal}{HTML}{007F76}
+\definecolor{mint}{HTML}{65D4C1}
+\definecolor{rust}{HTML}{A25728}
+\definecolor{muted}{HTML}{536C7A}
+\definecolor{wash}{HTML}{EDF5F4}
+\definecolor{hairline}{HTML}{DCE6E9}
+\setbeamercolor{normal text}{fg=ink,bg=white}
+\setbeamercolor{structure}{fg=teal}
+\setbeamercolor{frametitle}{fg=ink}
+\setbeamercolor{alerted text}{fg=rust}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize item}{\color{teal}\raisebox{.15ex}{\tiny$\blacksquare$}}
+\setbeamersize{text margin left=9mm,text margin right=9mm}
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+\newcommand{\chaptertag}{01\quad THE ECONOMICS}
+\setbeamertemplate{headline}{\vspace{2mm}\hspace{9mm}{\color{teal}\fontsize{7}{8}\selectfont\bfseries\chaptertag}\vspace{1mm}}
+\setbeamertemplate{frametitle}{\vspace{1mm}\insertframetitle\par\vspace{2mm}{\color{hairline}\hrule}\vspace{1mm}}
+\setbeamertemplate{footline}{\hspace{9mm}{\color{muted}\fontsize{6.7}{8}\selectfont IDE \& TALAM\`AS (2025)\hfill ECONOMICS $\to$ LEAN\hspace{6mm}\insertframenumber\hspace{9mm}}\vspace{3mm}}
+\newcommand{\src}[1]{\vfill\vspace{0mm}{\fontsize{6.8}{8}\selectfont\color{muted}#1\par}}
+\newcommand{\take}[1]{\par\vspace{1mm}\noindent\colorbox{wash}{\parbox{\dimexpr\linewidth-2\fboxsep}{\vspace{1mm}\color{ink}\small\raggedright #1\vspace{1mm}}}}
+\newcommand{\labeltext}[1]{{\color{teal}\small\bfseries #1}\par\vspace{2mm}}
+\newcommand{\bigstat}[2]{{\color{teal}\fontsize{27}{30}\selectfont\bfseries #1}\par\vspace{1mm}{\small #2}}
+\newcommand{\wa}{w^{A}}
+\newcommand{\wn}{w^{N}}
+\renewcommand{\arraystretch}{1.25}
+\lstdefinelanguage{Lean}{morekeywords={def,theorem,by,have,intro,unfold,noncomputable,calc,using},sensitive=true,morecomment=[l]{--}}
+\lstset{language=Lean,basicstyle=\ttfamily\footnotesize,breaklines=true,columns=fullflexible,keepspaces=true,showstringspaces=false,keywordstyle=\bfseries\color{teal},commentstyle=\color{muted},backgroundcolor=\color{wash},frame=none,aboveskip=3pt,belowskip=3pt,xleftmargin=3pt,xrightmargin=3pt,framexleftmargin=3pt,literate={ℝ}{{$\mathbb R$}}1 {∀}{{$\forall$}}1 {→}{{$\to$}}1 {≤}{{$\le$}}1 {≠}{{$\ne$}}1 {↔}{{$\leftrightarrow$}}1 {₀}{{$_0$}}1}
+\pdfstringdefDisableCommands{\def\\{ }\def\translate#1{#1}}

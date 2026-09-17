@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/opt/homebrew/bin/lake",
+    "env",
+    "lean",
+    "/Users/gabrielsaco/Documents/GitHub/ai-05-ide/analysis/BoundaryCheck.lean"
+  ],
+  "cwd": "/Users/gabrielsaco/Documents/GitHub/AppliedModelingLib-ai05",
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "checked_at": "2026-09-17T13:48:31.170206+00:00",
+  "scope": "Presentation-only counterexample to deleting z<1; not part of the frozen original paper folder."
+}
