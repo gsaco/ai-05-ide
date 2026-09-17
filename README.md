@@ -5,14 +5,14 @@
 <p align="center">
   <a href="https://arxiv.org/abs/2312.05481v11"><img src="assets/badge-source.svg" alt="Source: arXiv v11"></a>
   <a href="checks/lean-check.md"><img src="assets/badge-lean-check.svg" alt="Lean fast check: PASS, recorded run"></a>
-  <a href="lean/docs/RUN_REPORT.md"><img src="assets/badge-coverage.svg" alt="Full propositions: 0 of 6, partial"></a>
+  <a href="checks/lean-scope.md"><img src="assets/badge-coverage.svg" alt="Lean scope: discrete model"></a>
   <a href="presentation.pdf"><img src="assets/badge-deck.svg" alt="Presentation: 20 minutes"></a>
 </p>
 
 <p align="center">
   <a href="presentation.pdf"><strong>Read the slides</strong></a> ·
   <a href="analysis/derivation.md">Follow the derivation</a> ·
-  <a href="lean/FirmAlgebra.lean">Inspect the proof</a> ·
+  <a href="lean/DiscreteCalculations.lean">Inspect the discrete proof</a> ·
   <a href="lean/docs/RUN_REPORT.md">See the honest status</a>
 </p>
 
@@ -43,7 +43,7 @@ $$\mu>\int_0^a h(1-z)\,dG(z)+\frac{1-G(a)}{h(1-a)}.$$
 
 P6 compares the **same capability and compute supply** across autonomy regimes. The thresholds $\bar a$ and $w(0)$ are distinct.
 
-### From a hand calculation to Lean
+### Discrete analysis and Lean scope
 
 For three types $(0,\frac12,1)$, masses $(.55,.30,.15)$, $h=\frac12$ and $\mu=2$, baseline wages are $(.2,.6,1.6)$. On the autonomous branch $0<a<\frac13$:
 
@@ -58,6 +58,6 @@ The [numerical checks](checks/computation.txt) verify resource feasibility, no p
 | [Fast check: passed](checks/lean-check.md) | Build and whitespace passed; **not** full source verification. |
 | [Coverage: partial](lean/docs/RUN_REPORT.md) | **0/6 continuum propositions proved.** Source Specs, equilibrium machinery and semantic closeout remain open. |
 
-`lean/` preserves the complete original run unchanged. Badges describe that recorded run, not live CI. The [new presentation-only boundary check](analysis/BoundaryCheck.lean) is separate from that snapshot.
+**Selected scope: discrete-model algebra and supporting wage identities.** The continuum extension has been stopped; no full discrete-equilibrium or continuum proof is claimed. `lean/` preserves the complete original run, including its audits and partial status. See the [scope record](checks/lean-scope.md), [analysis guide](analysis/README.md), and [validation guide](checks/README.md). Badges describe the recorded run, not live CI.
 
 **Finish and reproduce:** add your genuine [handwritten photograph](hand/README.md), then run `make analysis slides` with the [dependencies](requirements.txt) installed. [Rehearsal notes](analysis/presentation-notes.md) allocate 20 minutes, with exactly six slides on Lean. [Raw prompts](prompts.md) preserve the actual exchange. The handwritten requirement is **still pending**.

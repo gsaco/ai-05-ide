@@ -29,7 +29,7 @@ banner='''<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="300" view
 for name,label,value,color,w1,w2 in [
  ('source','SOURCE','arXiv v11','#285b7a',76,92),
  ('lean-check','LEAN FAST CHECK','PASS · recorded run','#007f76',142,154),
- ('coverage','FULL PROPOSITIONS','0 / 6 · partial','#a25728',154,126),
+ ('coverage','LEAN SCOPE','Discrete model','#007f76',106,126),
  ('deck','PRESENTATION','20 minutes','#285b7a',124,102)]:
  total=w1+w2
  svg=f'''<svg xmlns="http://www.w3.org/2000/svg" width="{total}" height="28" role="img" aria-label="{escape(label)}: {escape(value)}"><rect width="{total}" height="28" rx="5" fill="{color}"/><path d="M5 0H{w1}V28H5Q0 28 0 23V5Q0 0 5 0" fill="#243d4d"/><g font-family="Segoe UI,Arial,sans-serif" font-size="11" text-anchor="middle" fill="white"><text x="{w1/2}" y="18">{escape(label)}</text><text x="{w1+w2/2}" y="18">{escape(value)}</text></g></svg>'''
