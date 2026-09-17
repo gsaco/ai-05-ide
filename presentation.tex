@@ -79,7 +79,8 @@ More knowledgeable workers need less help, expanding the solver's span.
 \end{frame}
 
 \begin{frame}{Proposition 5: capability determines bottom gains}
-Let $B$ and $T$ be strict wage winners below and above AI.
+\[B=\{z\in[0,a]:\wa(z)>w(z)\},\qquad
+T=\{z\in[a,1]:\wa(z)>w(z)\}.\]
 \begin{block}{Bottom: a capability threshold}
 \[B\ne\varnothing\quad\Longleftrightarrow\quad a>\bar a,
 \qquad \bar a\in\operatorname{int}W.\]
@@ -104,19 +105,33 @@ $a>w(0)$ & Lowest-knowledge humans adopt; strict bottom gains and some strict hu
 \end{tabular}
 \end{center}
 \vspace{4mm}
-The adoption threshold $w(0)$ differs from the P5 threshold $\bar a$.
+\alert{Capability condition:} $a>w(0)$ is required for strict bottom gains.
 \end{frame}
 
-\begin{frame}{Proposition 6: bottom, top, and total output}
+\begin{frame}{Proposition 6: local comparisons, explicit quantifiers}
+\begin{block}{Near the bottom}
+\[\exists\epsilon_B>0\ \forall z\in[0,\epsilon_B):
+\quad\wn(z)\ge\max\{w(z),\wa(z)\}.\]
+Both comparisons are strict if $a>w(0)$.
+\end{block}
+\begin{block}{Near the top}
+\[\exists\epsilon_T>0\ \forall z\in(1-\epsilon_T,1]:
+\quad\wn(z)\le\wa(z).\]
+Strict for $z\ne1$; no strict ranking is asserted at $z=1$.
+\end{block}
+\medskip
+$w$: before AI; $w^A$: autonomous AI; $w^N$: co-pilot-only AI.
+\end{frame}
+
+\begin{frame}{Proposition 6: equilibrium, losses, and output}
 \begin{points}
-\item Near the bottom: $\wn\ge\max\{w,\wa\}$.\par
-Strict if $a>w(0)$.
-\item Near the top: $\wn\le\wa$.\par
-Strict below $z=1$.
-\item Total output: $Y^A>Y^N$.
+\item The equilibrium is unique and efficient; it maximizes labor income within the co-pilot technology.
+\item With adoption, AI-assisted workers occupy the bottom. Human-assisted workers and human solvers also exist; independent humans may be absent.
+\item Some $z\in(0,1]$ satisfies $\wn(z)\le w(z)$; strict if $a>w(0)$.
 \end{points}
-\vspace{4mm}
-The co-pilot equilibrium is unique, efficient, and maximizes labor income \emph{within its permitted technology}.
+\begin{block}{Output under the same capability and compute supply}
+\[Y^A>Y^N.\]
+\end{block}
 \end{frame}
 
 \begin{frame}{Why autonomy changes the distribution}
@@ -259,7 +274,8 @@ Find wages and rents that rule out profitable entry.
 The genuine handwritten photograph is still pending.
 }
 \medskip\par
-\textbf{Verdict:} capability changes the sign even at fixed autonomy.
+\textbf{Verdict:} bottom gains require capability: $a>\bar a$ in P5,\par
+$a>w(0)$ in P6. The thresholds are distinct; autonomy also matters.
 \end{frame}
 
 \begin{frame}{What the paper and the example teach us}

@@ -39,14 +39,15 @@ Identities need nonzero denominators; this inequality needs \alert{positivity}.
 
 \end{frame}
 
-\begin{frame}[fragile]{Lean 4/6: zero profit implies a wage identity}
+\begin{frame}[fragile]{Lean 4/6: paper equation, contract, and checked proof}
 \[n(z)=\frac1{h(1-z)},\qquad n(z)(a-w)-r=0
-\quad\Longrightarrow\quad w=a-h(1-z)r.\]
+\ \Longrightarrow\ w=a-h(1-z)r.\]
+\lstinputlisting[firstline=22,lastline=24,basicstyle=\ttfamily\footnotesize]{lean/FirmAlgebra.lean}
 \lstinputlisting[firstline=28,lastline=32,basicstyle=\ttfamily\footnotesize]{lean/FirmAlgebra.lean}
-\medskip
-\texttt{field\_simp} uses $h\ne0$ and $1-z\ne0$ to clear denominators.\par
-\texttt{nlinarith} then proves the wage identity.\par\medskip
-\textbf{Build: PASS.} \texttt{zeroProfitWage} assumes $0<h<1$, $0\le z<1$, and zero profit; it does not prove an equilibrium.
+\small
+$h$: helping cost; $z$: worker knowledge; $a$: AI capability; $w$: wage; $r$: rent.\par
+\texttt{field\_simp} clears nonzero denominators; \texttt{nlinarith} finishes.\par
+\textbf{\texttt{zeroProfitWage}: PASS.} Arbitrary real $a,w,r$ broaden the source domain; zero profit is assumed and equilibrium is not proved.
 \end{frame}
 
 \begin{frame}{Lean 5/6: a missing assumption changes the claim}

@@ -297,3 +297,105 @@ La paleta ahora combina azul oscuro, verde petróleo y fondos claros. Añadí do
 
 La versión ampliada tiene 24 diapositivas y mantiene el guion de 20 minutos. La revisión visual confirmó que las ecuaciones y el código se leen bien; ajusté dos diapositivas para darles más espacio. El contenido formalizado de Lean permanece intacto y sus límites siguen explícitos.
 
+
+
+## Assistant
+
+Actualicé la [presentación](/Users/gabrielsaco/Documents/GitHub/ai-05-ide/presentation.pdf):
+
+- Beamer clásico con azul oscuro, verde petróleo y fondos claros.
+- Más explicación económica, del ejercicio computacional y de las pruebas.
+- **24 diapositivas**, exactamente **6 sobre Lean**.
+- En inglés, sin notas al pie y revisada visualmente.
+
+[Fuente LaTeX](/Users/gabrielsaco/Documents/GitHub/ai-05-ide/presentation.tex). Subida a `branch1`, commit `742811e`.
+
+
+## User
+
+one quesiton. why 0 of 6 Full continuum propositions proved?
+
+
+
+## Assistant
+
+It means **Lean has not proved any of the paper’s six complete propositions**. The work currently verifies narrower supporting results:
+
+- The wage identity derived from zero profit.
+- The bottom-gain threshold in our three-type example.
+- Related algebraic results.
+
+The full propositions require formal definitions and proofs of the **continuum economy, equilibrium, matching, and wage comparisons**. Those parts remain unfinished.
+
+The reported **PASS** means the existing Lean code compiles and its proofs check. It does **not** mean all paper claims were formalized. The separate source-verification check also stopped because the source statement map was missing.
+
+So **“0 of 6” is an honest coverage statement—not six failed proofs**. The formalization is partial, which your professor explicitly permits when the unfinished work and blockers are reported accurately.
+
+
+## User
+
+en las indicaciones dicen eso? [https://github.com/alexanderquispe/AI-Econ-Modeling/issues/4](https://github.com/alexanderquispe/AI-Econ-Modeling/issues/4)
+
+
+
+## Assistant
+
+Voy a revisar el issue para confirmar qué permite sobre resultados parciales y qué exige entregar.
+
+
+
+## Assistant
+
+**Sí: las instrucciones permiten entregar resultados parciales.** En la sección 2 dice literalmente:
+
+> “A failed or partial result must still be submitted exactly as generated, together with an explanation of the precise blocker.”
+
+Además, exige una ejecución propia, conservar la carpeta completa, registrar el chequeo e identificar los obstáculos de los objetivos pendientes. **No establece que debas demostrar las seis proposiciones completas.** [Ver instrucciones, sección 2](https://github.com/alexanderquispe/AI-Econ-Modeling/issues/4#issue-199).
+
+Pero debo matizar mi respuesta anterior: **permitir una entrega parcial no garantiza que cualquier avance parcial cumpla todos los requisitos o merezca la máxima nota**. Hay que demostrar que se siguió el procedimiento y explicar lo obtenido.
+
+El **“0 de 6” no es una exigencia del profesor**: es nuestro reporte de cobertura. Tenemos pruebas de resultados auxiliares, pero ninguna proposición completa del modelo continuo.
+
+También detecté un requisito en el issue actual que no aparecía en el texto que pegaste: **GPT-5.6 Sol con razonamiento `xhigh`**. Debemos contrastarlo con el registro de la ejecución antes de afirmar que cumplimos íntegramente el procedimiento. [Sección 2 del issue](https://github.com/alexanderquispe/AI-Econ-Modeling/issues/4).
+
+
+## User
+
+### This week’s trap
+
+The usual one-line gloss of this paper is that *"the distributional effect is driven by AI autonomy, not capability."* Ask an LLM about it and you will probably get exactly that sentence.
+
+Check it against Propositions 5 and 6. **Under what condition are there winners at the bottom? Is that condition about autonomy or about capability?** The paper runs a two-dimensional taxonomy, and the popular gloss collapses it into one dimension. Getting the two dimensions right, with the condition stated, is the core of the main-result part of your presentation.
+
+The Lean exercise is part of that evaluation: formal verification is useful precisely because it forces every quantifier, domain restriction, and inequality to be made explicit. The presentation must cover:
+
+1. the paper and the agent’s problem;
+2. the main result with **all** its conditions;
+3. what you did analytically and computationally;
+4. your Lean formalization, including the required Lean slide described below; and
+5. where you did not believe the AI, with the hand derivation on screen and your verdict. show the original mathematical equation, proposition, or claim in readable LaTeX;
+6. show the corresponding Lean statement and the most relevant proof fragment; and
+7. explain in your own words how the mathematical objects, assumptions, and conclusion are represented, and what Lean verifies.
+
+Do not display Lean code as decoration. You must be able to identify the theorem or `Spec`, explain at least one nontrivial line or proof step, and say whether Lean verifies the source claim exactly or only after adding assumptions or changing the domain. Also report the relevant build/check result.
+
+The ideal progression is **paper equations → Lean translation → Lean-checked proof → your interpretation**. A screenshot alone is not sufficient; typeset or clearly display a short, readable code excerpt and explain it. CONSIDER ALL THIS IN THE CLASSIC BEAMER.
+
+
+
+## Assistant
+
+Revisaré el Beamer clásico contra esos requisitos. Haré explícitas las condiciones para que gane la parte baja y reforzaré la secuencia ecuación → enunciado Lean → prueba → interpretación, manteniendo seis diapositivas de Lean. La foto manuscrita seguirá marcada como pendiente hasta que exista una fotografía real.
+
+
+
+## Assistant
+
+Comprobé las Proposiciones 5 y 6 contra el texto del paper. Ahora quedan visibles los dos umbrales de capacidad —\(a>\bar a\) y \(a>w(0)\)—, los intervalos donde se comparan salarios y las excepciones de igualdad. También completé la diapositiva de la ecuación salarial con su `Spec`, el fragmento de prueba y la explicación de lo que Lean verifica.
+
+
+
+## Assistant
+
+El Beamer ya recoge esos requisitos con condiciones y límites explícitos. Añadí una tabla que vincula cada exigencia con sus diapositivas. Queda pendiente la fotografía real de la derivación: la fórmula y el veredicto están en pantalla, pero no presentaré eso como sustituto de la evidencia manuscrita.
+
