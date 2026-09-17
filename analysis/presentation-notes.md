@@ -1,6 +1,6 @@
 # Rehearsal: classic Beamer, 20 minutes
 
-25 English slides: 19 on the paper and finite exercise, followed by exactly six on Lean. All conditions and local comparison quantifiers are explicit. No footer notes.
+26 English slides: 20 on the paper and finite exercise, followed by exactly six on Lean. All conditions and local comparison quantifiers are explicit. No footer notes.
 
 | Slide | Topic | Time | Cumulative |
 |---|---|---:|---:|
@@ -21,14 +21,15 @@
 | 15 | Numerical results separate the two dimensions | 0:35 | 10:50 |
 | 16 | More output does not imply more labor income | 0:40 | 11:30 |
 | 17 | What the computational check establishes | 0:50 | 12:20 |
-| 18 | The claim I would not accept without checking | 0:40 | 13:00 |
-| 19 | What the paper and the example teach us | 0:25 | 13:25 |
-| 20 | Lean 1/6: from economics to a precise statement | 0:45 | 14:10 |
-| 21 | Lean 2/6: the bottom-gain threshold | 1:20 | 15:30 |
-| 22 | Lean 3/6: why the inequality proof works | 1:10 | 16:40 |
-| 23 | Lean 4/6: paper equation, contract, and checked proof | 1:15 | 17:55 |
-| 24 | Lean 5/6: a missing assumption changes the claim | 1:00 | 18:55 |
-| 25 | Lean 6/6: what passed and what remains open | 1:05 | 20:00 |
+| 18 | Hand check: capability changes who gains | 0:20 | 12:40 |
+| 19 | Hand check: wages are not total output | 0:20 | 13:00 |
+| 20 | What the paper and the example teach us | 0:25 | 13:25 |
+| 21 | Lean 1/6: from economics to a precise statement | 0:45 | 14:10 |
+| 22 | Lean 2/6: the bottom-gain threshold | 1:20 | 15:30 |
+| 23 | Lean 3/6: why the inequality proof works | 1:10 | 16:40 |
+| 24 | Lean 4/6: paper equation, contract, and checked proof | 1:15 | 17:55 |
+| 25 | Lean 5/6: a missing assumption changes the claim | 1:00 | 18:55 |
+| 26 | Lean 6/6: what passed and what remains open | 1:05 | 20:00 |
 
 ## Oral detail and source references
 
@@ -40,17 +41,17 @@
 
 **Slides 15–16.** The lines join only three discrete types. Compare across panels to isolate capability and within panels to isolate autonomy. At a=.4, co-pilot wages are (.4,.7,1.2), autonomous wages (.25,.5,2). Output includes compute-owner income. Autonomous production contains the co-pilot feasible set. If a>0 and compute is idle, independent AI adds strictly positive output; a=0 needs the separate human-assisted AI-worker mechanism. Numerical checks certify the finite examples, not the continuum theorem.
 
-**Slides 18–19.** Do the derivation yourself and add the real photo as hand/derivation.jpg before presenting. The typeset placeholder is not the required handwritten evidence. Explain the verdict in your own words: capability changes bottom gains even when autonomy is held fixed.
+**Slides 18–20.** The genuine photos appear on slides 18–19. Point out the gap in the handwritten “Hence”: output follows from feasible production allocations, not wage rankings. The hand guide supplies the full calculation. Explain the verdict in your own words: capability changes bottom gains even when autonomy is held fixed.
 
-**Slide 20.** A Spec is a proposition. Lean checks a term of that type. The source-to-Spec translation is a separate audit, and a familiar theorem name is not evidence of source fidelity.
+**Slide 21.** A Spec is a proposition. Lean checks a term of that type. The source-to-Spec translation is a separate audit, and a familiar theorem name is not evidence of source fidelity.
 
-**Slides 21–22.** The displayed statement and proof are directly included from lean/DiscreteCalculations.lean. Real a is quantified, with 0<a<1/3. bottomWage is the candidate formula a/[2(1−a)], not a proven equilibrium object. hden proves positivity, which preserves the direction when clearing the fraction. constructor splits the equivalence; linarith checks each linear implication. The proof builds, but Proposition 5 remains unproved.
+**Slides 22–23.** The displayed statement and proof are directly included from lean/DiscreteCalculations.lean. Real a is quantified, with 0<a<1/3. bottomWage is the candidate formula a/[2(1−a)], not a proven equilibrium object. hden proves positivity, which preserves the direction when clearing the fraction. constructor splits the equivalence; linarith checks each linear implication. The proof builds, but Proposition 5 remains unproved.
 
-**Slide 23.** FirmAlgebra.zeroProfitWage quantifies real h,z,a,w,r with 0<h<1 and 0≤z<1, and explicitly assumes zero profit. The displayed proof obtains both nonzero factors, unfolds span and profit, clears denominators, and finishes with nlinarith. Bounds h<1 and z≥0 remain in the statement although unused by the algebra. Arbitrary real a,w,r are an algebraic generalization. Active roles, market clearing, and equilibrium rent values are not established. The source equation is on v11 pp.10/12. The original run first failed to clear a remaining factor denominator when given only a product's nonzero proof; supplying both factors repaired that tactic step.
+**Slide 24.** FirmAlgebra.zeroProfitWage quantifies real h,z,a,w,r with 0<h<1 and 0≤z<1, and explicitly assumes zero profit. The displayed proof obtains both nonzero factors, unfolds span and profit, clears denominators, and finishes with nlinarith. Bounds h<1 and z≥0 remain in the statement although unused by the algebra. Arbitrary real a,w,r are an algebraic generalization. Active roles, market clearing, and equilibrium rent values are not established. The source equation is on v11 pp.10/12. The original run first failed to clear a remaining factor denominator when given only a product's nonzero proof; supplying both factors repaired that tactic step.
 
-**Slide 24.** Distinguish a failed tactic from an invalid mathematical generalization. The counterexample at z=1 uses Lean's total real division. It is outside the worker domain and refutes only the unrestricted algebraic claim. analysis/BoundaryCheck.lean compiled with exit 0; its result is recorded separately in checks/presentation-boundary-check.json. The original lean/ snapshot is unchanged.
+**Slide 25.** Distinguish a failed tactic from an invalid mathematical generalization. The counterexample at z=1 uses Lean's total real division. It is outside the worker domain and refutes only the unrestricted algebraic claim. analysis/BoundaryCheck.lean compiled with exit 0; its result is recorded separately in checks/presentation-boundary-check.json. The original lean/ snapshot is unchanged.
 
-**Slide 25.** The required fast check passed, as did the full root build. The semantic preflight stopped with exit 2 because paper_statement_map.json was missing. Four inspected proof endpoints had no sorryAx; that does not supply missing proofs. Zero of six complete continuum propositions are formalized. Measurable matching, equilibrium, sorting, complete source Specs, and semantic audits remain open. End on the value of stating exactly what has been checked.
+**Slide 26.** The required fast check passed, as did the full root build. The semantic preflight stopped with exit 2 because paper_statement_map.json was missing. Four inspected proof endpoints had no sorryAx; that does not supply missing proofs. Zero of six complete continuum propositions are formalized. Measurable matching, equilibrium, sorting, complete source Specs, and semantic audits remain open. End on the value of stating exactly what has been checked.
 
 ## Questions worth rehearsing
 

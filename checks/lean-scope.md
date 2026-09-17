@@ -20,4 +20,4 @@ The Lean code does not prove existence, market clearing, or uniqueness of the fu
 - New continuum experiments remain outside this weekly repository in the AppliedModelingLib clone. They are not imported or submitted as verified results.
 - The separate `analysis/BoundaryCheck.lean` remains a presentation-only check outside the preserved snapshot.
 - The existing check results describe the original run. No new complete-formalization result or successful semantic closeout is asserted.
-- The actual handwritten photograph is still required.
+- Two genuine handwritten photographs are included in hand/ and discussed on slides 18–19.

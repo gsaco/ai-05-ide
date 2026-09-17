@@ -215,6 +215,7 @@ lt.sty))) (./analysis/theme.tex
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/listings/lstpatch.sty)
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/listings/lstmisc.sty)
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/listings/listings.cfg))
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/tools/array.sty)
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/beamer/beamerthemeMadrid.sty
 
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/beamer/beamercolorthemewhale
@@ -263,9 +264,6 @@ lsaco/Library/texmf/fonts/enc/dvips/lm/lm-mathit.enc}]
 [5]
 [6{/Users/gabrielsaco/Library/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 109--109
-[]\T1/lmss/m/n/12 No adop-tion; wages and oc-cu-pa-tions
-
 [8]
 [9]
 [10]
@@ -276,33 +274,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 109--109
 [15 <./figures/discrete_wages.pdf>]
 [16]
 [17]
-[18]
-[19] (./analysis/lean-slides.tex
+[18 <./hand/derivation-1.jpg>]
+[19 <./hand/derivation-2.jpg>]
+[20] (./analysis/lean-slides.tex
 (/Users/gabrielsaco/Library/texmf/tex/latex/lm/t1lmtt.fd)
-[20] (./presentation.vrb (./lean/DiscreteCalculations.lean))
 [21] (./presentation.vrb (./lean/DiscreteCalculations.lean))
-[22] (./presentation.vrb (./lean/FirmAlgebra.lean) (./lean/FirmAlgebra.lean))
-[23]
+[22] (./presentation.vrb (./lean/DiscreteCalculations.lean))
+[23] (./presentation.vrb (./lean/FirmAlgebra.lean) (./lean/FirmAlgebra.lean))
 [24]
-[25]) (./presentation.aux) )
-(see the transcript file for additional information)</Users/gabrielsaco/Library
-/texmf/fonts/type1/public/lm/lmex10.pfb></Users/gabrielsaco/Library/texmf/fonts
-/type1/public/lm/lmmi10.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/publi
-c/lm/lmmi12.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/public/lm/lmss10.
-pfb></Users/gabrielsaco/Library/texmf/fonts/type1/public/lm/lmss12.pfb></Users/
-gabrielsaco/Library/texmf/fonts/type1/public/lm/lmss17.pfb></Users/gabrielsaco/
-Library/texmf/fonts/type1/public/lm/lmss8.pfb></Users/gabrielsaco/Library/texmf
-/fonts/type1/public/lm/lmssbx10.pfb></Users/gabrielsaco/Library/texmf/fonts/typ
-e1/public/lm/lmsso10.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/public/l
-m/lmsso12.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/public/lm/lmsso8.pf
-b></Users/gabrielsaco/Library/texmf/fonts/type1/public/lm/lmsy10.pfb></Users/ga
-brielsaco/Library/texmf/fonts/type1/public/lm/lmsy8.pfb></Users/gabrielsaco/Lib
-rary/texmf/fonts/type1/public/lm/lmtk10.pfb></Users/gabrielsaco/Library/texmf/f
-onts/type1/public/lm/lmtt10.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/p
-ublic/lm/lmtt12.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/public/lm/lmt
-t8.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/sym
-bols/msbm10.pfb>
-Output written on presentation.pdf (25 pages, 326747 bytes).
+[25]
+[26]) (./presentation.aux)
+
+Package rerunfilecheck Warning: File `presentation.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )</Users/gabrielsaco/Library/texmf/fonts/type1/public/lm/lmex10.pfb></Users/ga
+brielsaco/Library/texmf/fonts/type1/public/lm/lmmi10.pfb></Users/gabrielsaco/Li
+brary/texmf/fonts/type1/public/lm/lmmi12.pfb></Users/gabrielsaco/Library/texmf/
+fonts/type1/public/lm/lmss10.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/
+public/lm/lmss12.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/public/lm/lm
+ss17.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/public/lm/lmss8.pfb></Us
+ers/gabrielsaco/Library/texmf/fonts/type1/public/lm/lmssbx10.pfb></Users/gabrie
+lsaco/Library/texmf/fonts/type1/public/lm/lmsso10.pfb></Users/gabrielsaco/Libra
+ry/texmf/fonts/type1/public/lm/lmsso12.pfb></Users/gabrielsaco/Library/texmf/fo
+nts/type1/public/lm/lmsso8.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/pu
+blic/lm/lmsy10.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/public/lm/lmsy
+8.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/public/lm/lmtk10.pfb></User
+s/gabrielsaco/Library/texmf/fonts/type1/public/lm/lmtt10.pfb></Users/gabrielsac
+o/Library/texmf/fonts/type1/public/lm/lmtt12.pfb></Users/gabrielsaco/Library/te
+xmf/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2025basic/texmf-dist/fo
+nts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on presentation.pdf (26 pages, 6258403 bytes).
 Transcript written on presentation.log.
 /Library/TeX/texbin/pdflatex -interaction=nonstopmode -halt-on-error presentation.tex
 This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex)
@@ -521,6 +524,7 @@ lt.sty))) (./analysis/theme.tex
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/listings/lstpatch.sty)
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/listings/lstmisc.sty)
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/listings/listings.cfg))
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/tools/array.sty)
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/beamer/beamerthemeMadrid.sty
 
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/beamer/beamercolorthemewhale
@@ -569,9 +573,6 @@ lsaco/Library/texmf/fonts/enc/dvips/lm/lm-mathit.enc}]
 [5]
 [6{/Users/gabrielsaco/Library/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 109--109
-[]\T1/lmss/m/n/12 No adop-tion; wages and oc-cu-pa-tions
-
 [8]
 [9]
 [10]
@@ -582,31 +583,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 109--109
 [15 <./figures/discrete_wages.pdf>]
 [16]
 [17]
-[18]
-[19] (./analysis/lean-slides.tex
+[18 <./hand/derivation-1.jpg>]
+[19 <./hand/derivation-2.jpg>]
+[20] (./analysis/lean-slides.tex
 (/Users/gabrielsaco/Library/texmf/tex/latex/lm/t1lmtt.fd)
-[20] (./presentation.vrb (./lean/DiscreteCalculations.lean))
 [21] (./presentation.vrb (./lean/DiscreteCalculations.lean))
-[22] (./presentation.vrb (./lean/FirmAlgebra.lean) (./lean/FirmAlgebra.lean))
-[23]
+[22] (./presentation.vrb (./lean/DiscreteCalculations.lean))
+[23] (./presentation.vrb (./lean/FirmAlgebra.lean) (./lean/FirmAlgebra.lean))
 [24]
-[25]) (./presentation.aux) )
-(see the transcript file for additional information)</Users/gabrielsaco/Library
-/texmf/fonts/type1/public/lm/lmex10.pfb></Users/gabrielsaco/Library/texmf/fonts
-/type1/public/lm/lmmi10.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/publi
-c/lm/lmmi12.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/public/lm/lmss10.
-pfb></Users/gabrielsaco/Library/texmf/fonts/type1/public/lm/lmss12.pfb></Users/
-gabrielsaco/Library/texmf/fonts/type1/public/lm/lmss17.pfb></Users/gabrielsaco/
-Library/texmf/fonts/type1/public/lm/lmss8.pfb></Users/gabrielsaco/Library/texmf
-/fonts/type1/public/lm/lmssbx10.pfb></Users/gabrielsaco/Library/texmf/fonts/typ
-e1/public/lm/lmsso10.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/public/l
-m/lmsso12.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/public/lm/lmsso8.pf
-b></Users/gabrielsaco/Library/texmf/fonts/type1/public/lm/lmsy10.pfb></Users/ga
-brielsaco/Library/texmf/fonts/type1/public/lm/lmsy8.pfb></Users/gabrielsaco/Lib
-rary/texmf/fonts/type1/public/lm/lmtk10.pfb></Users/gabrielsaco/Library/texmf/f
-onts/type1/public/lm/lmtt10.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/p
-ublic/lm/lmtt12.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/public/lm/lmt
-t8.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/sym
-bols/msbm10.pfb>
-Output written on presentation.pdf (25 pages, 326747 bytes).
+[25]
+[26]) (./presentation.aux) )</Users/gabrielsaco/Library/texmf/fonts/type1/publi
+c/lm/lmex10.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/public/lm/lmmi10.
+pfb></Users/gabrielsaco/Library/texmf/fonts/type1/public/lm/lmmi12.pfb></Users/
+gabrielsaco/Library/texmf/fonts/type1/public/lm/lmss10.pfb></Users/gabrielsaco/
+Library/texmf/fonts/type1/public/lm/lmss12.pfb></Users/gabrielsaco/Library/texm
+f/fonts/type1/public/lm/lmss17.pfb></Users/gabrielsaco/Library/texmf/fonts/type
+1/public/lm/lmss8.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/public/lm/l
+mssbx10.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/public/lm/lmsso10.pfb
+></Users/gabrielsaco/Library/texmf/fonts/type1/public/lm/lmsso12.pfb></Users/ga
+brielsaco/Library/texmf/fonts/type1/public/lm/lmsso8.pfb></Users/gabrielsaco/Li
+brary/texmf/fonts/type1/public/lm/lmsy10.pfb></Users/gabrielsaco/Library/texmf/
+fonts/type1/public/lm/lmsy8.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/p
+ublic/lm/lmtk10.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/public/lm/lmt
+t10.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/public/lm/lmtt12.pfb></Us
+ers/gabrielsaco/Library/texmf/fonts/type1/public/lm/lmtt8.pfb></usr/local/texli
+ve/2025basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on presentation.pdf (26 pages, 6258487 bytes).
 Transcript written on presentation.log.

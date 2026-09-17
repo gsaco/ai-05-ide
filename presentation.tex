@@ -97,7 +97,7 @@ $W$ is the pre-AI worker set.
 Co-pilot-only equilibrium has zero AI rent: $r^N=0$.
 \vspace{5mm}
 \begin{center}
-\begin{tabular}{lp{8cm}}
+\begin{tabular}{l>{\raggedright\arraybackslash}p{8cm}}
 \toprule
 Capability & Outcome\\\midrule
 $a\le w(0)$ & No adoption; wages and occupations unchanged.\\[3mm]
@@ -261,21 +261,35 @@ Find wages and rents that rule out profitable entry.
 \end{points}
 \end{frame}
 
-\begin{frame}{The claim I would not accept without checking}
-\begin{block}{The misleading gloss}
-``Distribution depends on autonomy, not capability.''
-\end{block}
-\IfFileExists{hand/derivation.jpg}{%
-\centering\includegraphics[height=.47\textheight]{hand/derivation.jpg}
-}{%
-\[\frac{a}{2(1-a)}>\frac15\iff a>\frac27,
-\qquad0<a<\frac13.\]
+\begin{frame}{Hand check: capability changes who gains}
+\begin{columns}[T,onlytextwidth]
+\column{.54\textwidth}
+\includegraphics[width=\linewidth,trim=100 210 80 2220,clip]{hand/derivation-1.jpg}
+\column{.43\textwidth}
+\textbf{Claim challenged:} ``Distribution depends on autonomy, not capability.''
 \medskip
-The genuine handwritten photograph is still pending.
-}
+\[\frac{a}{2(1-a)}>\frac15\iff a>\frac27.\]
+Here $0<a<1/3$, so the denominator is positive.
 \medskip\par
-\textbf{Verdict:} bottom gains require capability: $a>\bar a$ in P5,\par
-$a>w(0)$ in P6. The thresholds are distinct; autonomy also matters.
+\textbf{Verdict:} even at fixed autonomy, capability decides bottom gains. This finite threshold is not the paper's $\bar a$.
+\end{columns}
+\end{frame}
+
+\begin{frame}{Hand check: wages are not total output}
+\begin{columns}[T,onlytextwidth]
+\column{.52\textwidth}
+\includegraphics[width=\linewidth,trim=100 1580 100 570,clip]{hand/derivation-2.jpg}
+\column{.45\textwidth}
+At $a=3/10$, the handwritten wage comparisons are correct.
+\medskip\par
+The last ``Hence'' needs an extra step: count production, including independent AI.
+\begin{align*}
+Y_0&=53/100,\\
+Y_N&=57/100,\\
+Y_A&=333/280.
+\end{align*}
+\textbf{Verdict:} $Y_A>Y_N>Y_0$. Resource allocations validate this ordering; wages alone do not.
+\end{columns}
 \end{frame}
 
 \begin{frame}{What the paper and the example teach us}

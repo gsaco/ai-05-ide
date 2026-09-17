@@ -16,52 +16,24 @@
   <a href="lean/docs/RUN_REPORT.md">See the honest status</a>
 </p>
 
-**Based on Enrique Ide and Eduard Talamàs (2025), _Artificial Intelligence in the Knowledge Economy_.** Course reading: May 20, 2025, 39 pages. Lean source: arXiv v11, February 25, 2025, 35 pages. [Source details](paper/README.md).
+**Ide & Talamàs (2025), _Artificial Intelligence in the Knowledge Economy_.** Reading: course PDF, May 20, 2025, 39 pages. Lean pin: arXiv v11, February 25, 2025, 35 pages.
 
-> **The key lesson:** giving AI more independence and making it more capable are different changes. Both affect who gains, who loses, and how much the economy produces.
+### The question and the agent’s problem
 
-### What is the economic problem?
+Who benefits when AI enters an economy organized around knowledge? Workers solve familiar problems and ask specialists for help. Specialists know more but have limited time. Humans choose the best-paying role; firms choose profitable teams. Competition and resource availability determine wages and compute rents. **Capability** determines which problems AI solves; **autonomy** determines whether it can produce independently or only advise humans.
 
-Workers handle routine problems and ask more knowledgeable specialists for help when they get stuck. Specialists have valuable knowledge but limited time. Firms choose who should work, who should advise, and whether to use AI. Humans seek the highest income; firms seek the most profitable teams. Competition and the availability of people and compute determine wages and AI rental prices.
+### Main results—and their conditions
 
-AI changes this organization in two ways. **Capability** determines which problems it can solve. **Autonomy** determines whether it can perform production work itself or only advise a human.
+**Proposition 5:** with autonomous AI, some people at the bottom gain **if and only if capability exceeds a threshold inside the pre-AI worker range**. Some people at the top gain at every permitted capability. A person with exactly AI’s knowledge loses. Autonomy alone does not explain these results.
 
-### Who gains? The conditions matter
+**Proposition 6:** co-pilot AI is adopted only when capability exceeds the least knowledgeable human’s pre-AI wage, measured in output. Otherwise wages and occupations stay unchanged. Near the bottom, co-pilots pay at least as much as autonomous AI and no AI; both comparisons become strict with adoption. Near the top, autonomous AI pays at least as much, strictly except at maximum knowledge. Some human weakly loses relative to no AI, strictly with adoption. At the same capability and compute supply, **autonomous AI produces strictly more total output**.
 
-| Result | Intuition and condition |
-|:--|:--|
-| **Bottom earners — Proposition 5** | With autonomous AI, some less knowledgeable humans gain **if and only if AI capability exceeds a threshold**. That threshold lies within the range of pre-AI workers, so even some relatively basic AI can benefit the bottom. Autonomy alone does not determine the outcome. |
-| **Top earners — Proposition 5** | Some highly knowledgeable humans gain at every permitted AI capability: they can supervise AI workers and apply their expertise more widely. This requires the assumptions below, including imperfect AI and sufficiently low helping costs. A human with exactly AI's knowledge loses. |
-| **Co-pilot adoption — Proposition 6** | Advice is used only when AI's problem-solving capability exceeds the least knowledgeable human's pre-AI wage, measured in units of output. Otherwise, wages and occupations stay unchanged. With adoption, the bottom gains strictly, but some other humans lose. This threshold differs from the autonomous-AI threshold. |
-| **Autonomy versus co-pilots — Proposition 6** | Near the bottom, co-pilots deliver wages at least as high as either autonomous AI or no AI; adoption makes both comparisons strict. Near the top, autonomous AI pays at least as much, strictly so except at the highest knowledge level. **Autonomous AI produces more total output.** |
+These claims require positive, sufficiently low helping costs so everyone initially works in teams; imperfect AI; abundant production opportunities; and compute supply exceeding potential human–AI team demand. Humans have equal working time and observable knowledge with a positive continuous density. Problem difficulty is independent and uniform. Agents are risk neutral, firms competitive with full information and no fixed costs, and teams have at most two layers. Endpoint comparisons concern neighborhoods, not every worker. Co-pilot equilibrium is unique, efficient, and maximizes labor income within its restricted technology; with adoption, AI-assisted workers, human-assisted workers, and human solvers coexist, while independent humans may be absent.
 
-**These results describe a specific economy.** Everyone has equal working time; knowledge is observable and continuously distributed with a positive, continuous density. Problems have independent, uniformly distributed difficulty. People are risk neutral; firms have full information, no fixed costs, and at most two layers. Output is the unit of account. Helping costs are positive and low enough that everyone works in teams before AI. AI cannot solve every problem. Production opportunities are plentiful, and compute exceeds what human–AI teams can use. The autonomy comparison holds capability and compute supply fixed.
+### Our derivation and Lean results
 
-The co-pilot equilibrium is unique and efficient, and maximizes labor income **within that restricted technology**. With adoption, AI-assisted workers, human-assisted workers, and human solvers all remain present; independent producers need not. The endpoint wage comparisons are local, not rankings of every worker.
+The [genuine handwritten pages](hand/README.md) solve a three-type example. They show how capability changes bottom gains while autonomy stays fixed. We checked wages, resource clearing, entry incentives, and output numerically. The second page’s output conclusion needs an additional allocation calculation, supplied in the hand guide and slides.
 
-### What we checked ourselves
+**Lean proves the finite bottom-gain threshold, two zero-profit identities, a middle-wage loss threshold, a free-advice comparison, and a labor-income identity.** Supporting proofs derive a wage formula from zero profit with explicit denominator restrictions. The recorded build and required fast check passed. These are conditional algebraic results: neither full discrete equilibrium nor the six complete continuum propositions is proved. Semantic verification stopped because the source statement map was missing.
 
-A **three-type example** replaces the paper's continuous population with low-, middle-, and high-knowledge humans. Solving the team equations shows how greater capability can turn bottom losses into gains while autonomy stays fixed. Numerical checks verify resource use, profitable-entry conditions, wage uniqueness, and income accounting for the selected examples. More output can coexist with less total human wage income because compute owners also receive income.
-
-[Read the derivation](analysis/derivation.md) · [Inspect the numerical checks](checks/computation.txt)
-
-### What Lean verifies
-
-Lean checks whether a mathematical conclusion follows from its stated assumptions. Our selected scope is **the discrete example's algebra and supporting wage calculations**.
-
-| Checked result | What the proof establishes |
-|:--|:--|
-| **Bottom-gain threshold** | Within the analyzed range, the proposed bottom wage improves on its pre-AI level exactly when capability crosses the derived threshold. Equality is not a strict gain. |
-| **Team wages and profits** | The proposed wages exhaust the output of two specified team configurations, leaving zero profit. |
-| **Distribution and accounting** | The code checks a middle-wage loss threshold, a comparison with free co-pilot advice, and the formula for total human wage income. |
-| **Supporting wage identity** | Given zero profit and explicit restrictions on helping costs and worker knowledge, the wage follows from productivity and the cost of AI advice. |
-
-**The recorded Lean build and required fast check passed.** This verifies the implemented proofs; it does not prove that the proposed teams form an equilibrium. The full discrete equilibrium and the paper's six complete continuum propositions are **not Lean-proved**. The separate source-verification check stopped because the source statement map was missing. Those limits remain visible in the original run records.
-
-[Discrete proofs](lean/DiscreteCalculations.lean) · [Check results](checks/lean-check.md) · [Scope and limitations](checks/lean-scope.md)
-
-### Explore the repository
-
-The [presentation](presentation.pdf) has six dedicated Lean slides; the [rehearsal guide](analysis/presentation-notes.md) allocates 20 minutes. The [analysis guide](analysis/README.md) and [validation guide](checks/README.md) locate the supporting materials. [Raw prompts](prompts.md) preserve the exchange.
-
-The complete generated `lean/` folder remains unchanged, including its audits and partial status. Badges describe the recorded run, not live automated checks. **The genuine handwritten derivation photograph is still pending**; see [hand/](hand/README.md).
+The original generated `lean/` folder is preserved unchanged. The [20-minute deck](presentation.pdf) includes six Lean slides explaining mathematics, code, proof steps, and limits. [Raw prompts](prompts.md), [analysis](analysis/README.md), and [checks](checks/README.md) preserve the evidence. Badges describe recorded results. The [submission audit](checks/submission-audit.md) records the requirement review and outstanding submission steps.
