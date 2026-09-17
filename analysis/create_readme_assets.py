@@ -21,8 +21,8 @@ banner='''<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="300" view
 <rect x="1068" y="106" width="84" height="84" rx="10" fill="#65d4c1"/>
 <text x="1110" y="151" fill="#122838" font-size="18" font-weight="700" text-anchor="middle">LEAN</text>
 <text x="1110" y="171" fill="#122838" font-size="12" text-anchor="middle">CHECKED</text>
-<text x="920" y="82" fill="#ffffff" font-size="18" text-anchor="middle">a</text>
-<text x="920" y="230" fill="#ffffff" font-size="18" text-anchor="middle">h</text>
+<text x="920" y="82" fill="#ffffff" font-size="18" text-anchor="middle">AI</text>
+<text x="920" y="230" fill="#ffffff" font-size="18" text-anchor="middle">Time</text>
 <circle cx="1190" cy="148" r="5" fill="#65d4c1"/>
 </g></svg>'''
 (R/'banner.svg').write_text(banner)
