@@ -250,20 +250,20 @@ s-dictionary-English.dict)
 m-dictionary-English.dict) (./presentation.nav)
 [1{/Users/gabrielsaco/Library/texlive/2025basic/texmf-var/fonts/map/pdftex/updm
 ap/pdftex.map}{/Users/gabrielsaco/Library/texmf/fonts/enc/dvips/lm/lm-ec.enc}]
-[2] (/Users/gabrielsaco/Library/texmf/tex/latex/lm/ot1lmss.fd)
+(/Users/gabrielsaco/Library/texmf/tex/latex/lm/ot1lmss.fd)
 (/Users/gabrielsaco/Library/texmf/tex/latex/lm/omllmm.fd)
 (/Users/gabrielsaco/Library/texmf/tex/latex/lm/omslmsy.fd)
 (/Users/gabrielsaco/Library/texmf/tex/latex/lm/omxlmex.fd)
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsfonts/umsa.fd)
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsfonts/umsb.fd)
+[2{/Users/gabrielsaco/Library/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}]
 [3{/Users/gabrielsaco/Library/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/Users/gabrie
-lsaco/Library/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/gabrielsaco/Librar
-y/texmf/fonts/enc/dvips/lm/lm-mathit.enc}]
+lsaco/Library/texmf/fonts/enc/dvips/lm/lm-mathit.enc}]
 [4]
 [5]
 [6{/Users/gabrielsaco/Library/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 104--104
+Underfull \hbox (badness 10000) in paragraph at lines 108--108
 []\T1/lmss/m/n/12 No adop-tion; wages and oc-cu-pa-tions
 
 [8]
@@ -271,17 +271,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 104--104
 [10]
 [11]
 [12]
-[13 <./figures/discrete_wages.pdf>]
-[14]
+[13]
+[14 <./figures/discrete_wages.pdf>]
 [15]
-[16] (./analysis/lean-slides.tex
+[16]
+[17]
+[18] (./analysis/lean-slides.tex
 (/Users/gabrielsaco/Library/texmf/tex/latex/lm/t1lmtt.fd)
-[17] (./presentation.vrb (./lean/DiscreteCalculations.lean))
-[18] (./presentation.vrb (./lean/DiscreteCalculations.lean))
-[19] (./presentation.vrb (./lean/FirmAlgebra.lean))
-[20]
-[21]
-[22]) (./presentation.aux) )
+[19] (./presentation.vrb (./lean/DiscreteCalculations.lean))
+[20] (./presentation.vrb (./lean/DiscreteCalculations.lean))
+[21] (./presentation.vrb (./lean/FirmAlgebra.lean))
+[22]
+[23]
+[24]) (./presentation.aux) )
 (see the transcript file for additional information)</Users/gabrielsaco/Library
 /texmf/fonts/type1/public/lm/lmex10.pfb></Users/gabrielsaco/Library/texmf/fonts
 /type1/public/lm/lmmi12.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/publi
@@ -291,12 +293,13 @@ gabrielsaco/Library/texmf/fonts/type1/public/lm/lmss8.pfb></Users/gabrielsaco/L
 ibrary/texmf/fonts/type1/public/lm/lmssbx10.pfb></Users/gabrielsaco/Library/tex
 mf/fonts/type1/public/lm/lmsso12.pfb></Users/gabrielsaco/Library/texmf/fonts/ty
 pe1/public/lm/lmsso8.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/public/l
-m/lmsy10.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/public/lm/lmtk10.pfb
-></Users/gabrielsaco/Library/texmf/fonts/type1/public/lm/lmtt10.pfb></Users/gab
-rielsaco/Library/texmf/fonts/type1/public/lm/lmtt12.pfb></Users/gabrielsaco/Lib
-rary/texmf/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2025basic/texmf-
-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on presentation.pdf (22 pages, 275321 bytes).
+m/lmsy10.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/public/lm/lmsy8.pfb>
+</Users/gabrielsaco/Library/texmf/fonts/type1/public/lm/lmtk10.pfb></Users/gabr
+ielsaco/Library/texmf/fonts/type1/public/lm/lmtt10.pfb></Users/gabrielsaco/Libr
+ary/texmf/fonts/type1/public/lm/lmtt12.pfb></Users/gabrielsaco/Library/texmf/fo
+nts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/ty
+pe1/public/amsfonts/symbols/msbm10.pfb>
+Output written on presentation.pdf (24 pages, 283485 bytes).
 Transcript written on presentation.log.
 /Library/TeX/texbin/pdflatex -interaction=nonstopmode -halt-on-error presentation.tex
 This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex)
@@ -550,20 +553,20 @@ s-dictionary-English.dict)
 m-dictionary-English.dict) (./presentation.nav)
 [1{/Users/gabrielsaco/Library/texlive/2025basic/texmf-var/fonts/map/pdftex/updm
 ap/pdftex.map}{/Users/gabrielsaco/Library/texmf/fonts/enc/dvips/lm/lm-ec.enc}]
-[2] (/Users/gabrielsaco/Library/texmf/tex/latex/lm/ot1lmss.fd)
+(/Users/gabrielsaco/Library/texmf/tex/latex/lm/ot1lmss.fd)
 (/Users/gabrielsaco/Library/texmf/tex/latex/lm/omllmm.fd)
 (/Users/gabrielsaco/Library/texmf/tex/latex/lm/omslmsy.fd)
 (/Users/gabrielsaco/Library/texmf/tex/latex/lm/omxlmex.fd)
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsfonts/umsa.fd)
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsfonts/umsb.fd)
+[2{/Users/gabrielsaco/Library/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}]
 [3{/Users/gabrielsaco/Library/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/Users/gabrie
-lsaco/Library/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/gabrielsaco/Librar
-y/texmf/fonts/enc/dvips/lm/lm-mathit.enc}]
+lsaco/Library/texmf/fonts/enc/dvips/lm/lm-mathit.enc}]
 [4]
 [5]
 [6{/Users/gabrielsaco/Library/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 104--104
+Underfull \hbox (badness 10000) in paragraph at lines 108--108
 []\T1/lmss/m/n/12 No adop-tion; wages and oc-cu-pa-tions
 
 [8]
@@ -571,17 +574,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 104--104
 [10]
 [11]
 [12]
-[13 <./figures/discrete_wages.pdf>]
-[14]
+[13]
+[14 <./figures/discrete_wages.pdf>]
 [15]
-[16] (./analysis/lean-slides.tex
+[16]
+[17]
+[18] (./analysis/lean-slides.tex
 (/Users/gabrielsaco/Library/texmf/tex/latex/lm/t1lmtt.fd)
-[17] (./presentation.vrb (./lean/DiscreteCalculations.lean))
-[18] (./presentation.vrb (./lean/DiscreteCalculations.lean))
-[19] (./presentation.vrb (./lean/FirmAlgebra.lean))
-[20]
-[21]
-[22]) (./presentation.aux) )
+[19] (./presentation.vrb (./lean/DiscreteCalculations.lean))
+[20] (./presentation.vrb (./lean/DiscreteCalculations.lean))
+[21] (./presentation.vrb (./lean/FirmAlgebra.lean))
+[22]
+[23]
+[24]) (./presentation.aux) )
 (see the transcript file for additional information)</Users/gabrielsaco/Library
 /texmf/fonts/type1/public/lm/lmex10.pfb></Users/gabrielsaco/Library/texmf/fonts
 /type1/public/lm/lmmi12.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/publi
@@ -591,10 +596,11 @@ gabrielsaco/Library/texmf/fonts/type1/public/lm/lmss8.pfb></Users/gabrielsaco/L
 ibrary/texmf/fonts/type1/public/lm/lmssbx10.pfb></Users/gabrielsaco/Library/tex
 mf/fonts/type1/public/lm/lmsso12.pfb></Users/gabrielsaco/Library/texmf/fonts/ty
 pe1/public/lm/lmsso8.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/public/l
-m/lmsy10.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/public/lm/lmtk10.pfb
-></Users/gabrielsaco/Library/texmf/fonts/type1/public/lm/lmtt10.pfb></Users/gab
-rielsaco/Library/texmf/fonts/type1/public/lm/lmtt12.pfb></Users/gabrielsaco/Lib
-rary/texmf/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2025basic/texmf-
-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on presentation.pdf (22 pages, 275321 bytes).
+m/lmsy10.pfb></Users/gabrielsaco/Library/texmf/fonts/type1/public/lm/lmsy8.pfb>
+</Users/gabrielsaco/Library/texmf/fonts/type1/public/lm/lmtk10.pfb></Users/gabr
+ielsaco/Library/texmf/fonts/type1/public/lm/lmtt10.pfb></Users/gabrielsaco/Libr
+ary/texmf/fonts/type1/public/lm/lmtt12.pfb></Users/gabrielsaco/Library/texmf/fo
+nts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/ty
+pe1/public/amsfonts/symbols/msbm10.pfb>
+Output written on presentation.pdf (24 pages, 283485 bytes).
 Transcript written on presentation.log.

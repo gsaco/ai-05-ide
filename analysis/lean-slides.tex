@@ -10,7 +10,10 @@
 \item Matching the statement to the paper requires a separate audit.
 \end{points}
 \vspace{4mm}
-Our run checks supporting algebra and a finite-model threshold.
+\begin{block}{Our translation boundary}
+Real-valued algebra and a finite wage formula are formalized.\par
+The continuum equilibrium and its matching structure are not.
+\end{block}
 \end{frame}
 
 \begin{frame}[fragile]{Lean 2/6: the bottom-gain threshold}
@@ -18,7 +21,7 @@ Our run checks supporting algebra and a finite-model threshold.
 \left(\tfrac15<\frac{a}{2(1-a)}\iff\tfrac27<a\right).\]
 \lstinputlisting[firstline=21,lastline=30,basicstyle=\ttfamily\footnotesize]{lean/DiscreteCalculations.lean}
 \medskip
-\texttt{bottomGain} proves both directions over real numbers.\par
+\texttt{bottomWage a} means $a/[2(1-a)]$; the domain is $0<a<1/3$.\par
 \textbf{Build: PASS.} This is the finite wage inequality, not Proposition 5.
 \end{frame}
 
@@ -31,6 +34,9 @@ Our run checks supporting algebra and a finite-model threshold.
 \item \texttt{constructor}: split ``if and only if'' into two directions.\par
 \texttt{linarith} closes each direction by linear arithmetic.
 \end{points}
+\medskip
+Identities need nonzero denominators; this inequality needs \alert{positivity}.
+
 \end{frame}
 
 \begin{frame}[fragile]{Lean 4/6: zero profit implies a wage identity}
@@ -38,9 +44,9 @@ Our run checks supporting algebra and a finite-model threshold.
 \quad\Longrightarrow\quad w=a-h(1-z)r.\]
 \lstinputlisting[firstline=28,lastline=32,basicstyle=\ttfamily\footnotesize]{lean/FirmAlgebra.lean}
 \medskip
-\texttt{zeroProfitWage} uses $h>0$ and $z<1$ to justify division.\par\medskip
-\textbf{Build: PASS.} It checks conditional algebra over real scalars;\par
-it does not establish market clearing or equilibrium rents.
+\texttt{field\_simp} uses $h\ne0$ and $1-z\ne0$ to clear denominators.\par
+\texttt{nlinarith} then proves the wage identity.\par\medskip
+\textbf{Build: PASS.} \texttt{zeroProfitWage} assumes $0<h<1$, $0\le z<1$, and zero profit; it does not prove an equilibrium.
 \end{frame}
 
 \begin{frame}{Lean 5/6: a missing assumption changes the claim}
@@ -59,8 +65,8 @@ This tests unrestricted algebra; it is not an admissible economic team.
 \begin{center}
 \begin{tabular}{lp{8cm}}\toprule
 Status & Evidence\\\midrule
-PASS & Support proofs, full build, and required fast check.\\
-STOPPED & Semantic preflight: missing source statement map.\\
+\textcolor{teal}{PASS} & Support proofs, full build, and required fast check.\\
+\textcolor{gold}{STOPPED} & Semantic preflight: missing source statement map.\\
 0 of 6 & Full continuum propositions proved.\\\bottomrule
 \end{tabular}
 \end{center}
