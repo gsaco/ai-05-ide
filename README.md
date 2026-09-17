@@ -60,4 +60,4 @@ The [numerical checks](checks/computation.txt) verify resource feasibility, no p
 
 `lean/` preserves the complete original run unchanged. Badges describe that recorded run, not live CI. The [new presentation-only boundary check](analysis/BoundaryCheck.lean) is separate from that snapshot.
 
-**Finish and reproduce:** add your genuine [handwritten photograph](hand/README.md), then run `make analysis slides` with the [dependencies](requirements.txt) installed. [Rehearsal notes](analysis/presentation-notes.md) allocate 20 minutes, including eight minutes on Lean. [Raw prompts](prompts.md) preserve the actual exchange. The handwritten requirement is **still pending**.
+**Finish and reproduce:** add your genuine [handwritten photograph](hand/README.md), then run `make analysis slides` with the [dependencies](requirements.txt) installed. [Rehearsal notes](analysis/presentation-notes.md) allocate 20 minutes, with exactly six slides on Lean. [Raw prompts](prompts.md) preserve the actual exchange. The handwritten requirement is **still pending**.

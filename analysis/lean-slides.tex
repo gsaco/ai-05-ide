@@ -1,115 +1,72 @@
-\renewcommand{\chaptertag}{03\quad FROM MATHEMATICS TO LEAN}
-\begin{frame}{Lean is one link in the verification chain}
-\centering
-\begin{tikzpicture}[>=Latex]
-\node[draw=hairline,fill=wash,text width=25mm,align=center,inner sep=3mm] (a) at(0,0){\textbf{Paper}\\\small economic claim};
-\node[draw=hairline,fill=wash,text width=25mm,align=center,inner sep=3mm] (b) at(4,0){\textbf{Spec : Prop}\\\small precise statement};
-\node[draw=hairline,fill=wash,text width=25mm,align=center,inner sep=3mm] (c) at(8,0){\textbf{Proof}\\\small checked term};
-\draw[->,thick,rust](a)--node[above,font=\small]{translate}(b);
-\draw[->,thick,teal](b)--node[above,font=\small]{prove}(c);
-\end{tikzpicture}
+% Exactly six Lean frames. No footnotes or footer notes.
+\begin{frame}{Lean 1/6: from economics to a precise statement}
+\begin{center}
+\Large Paper claim $\;\longrightarrow\;$ Lean statement $\;\longrightarrow\;$ Proof
+\end{center}
 \vspace{6mm}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{.46\textwidth}\labeltext{A HUMAN / SOURCE QUESTION}\small Does the formal statement capture the paper's objects, assumptions, and conclusion?\end{column}
-\begin{column}{.46\textwidth}\labeltext{A LEAN QUESTION}\small Does the proof establish that exact formal statement from its stated assumptions?\end{column}
-\end{columns}
-\take{A green build answers the second question for compiled proofs. It does not automatically answer the first or establish full-paper coverage.}
-\src{This run: source-pinned algebraic support and a finite example; no completed continuum proposition Specs.}
+\begin{points}
+\item A \texttt{Spec : Prop} states objects, assumptions, and conclusion.
+\item Lean checks a proof of that exact formal statement.
+\item Matching the statement to the paper requires a separate audit.
+\end{points}
+\vspace{4mm}
+Our run checks supporting algebra and a finite-model threshold.
 \end{frame}
 
-\begin{frame}[fragile]{The source equation becomes a precise contract}
-\[
-\text{Paper:}\quad n(z)=\frac1{h(1-z)},\quad n(z)(a-w)-r=0
-\ \Longrightarrow\ w=a-h(1-z)r.
-\]
-\small\textbf{Lean contract + key steps of \texttt{zeroProfitWage}}\par\vspace{1mm}
-\lstinputlisting[firstline=22,lastline=24,basicstyle=\ttfamily\fontsize{8.8}{10.5}\selectfont]{lean/FirmAlgebra.lean}
-\lstinputlisting[firstline=28,lastline=32,basicstyle=\ttfamily\fontsize{8.8}{10.5}\selectfont]{lean/FirmAlgebra.lean}
-\vspace{1mm}
-\small\textbf{Interpretation:} real scalars, explicit bounds, zero profit. Nonzero denominators justify the algebra; Lean checks its conclusion.
-\src{v11 pp.10/12. FirmAlgebra.zeroProfitWage: build PASS. This is a conditional wage identity, not an equilibrium theorem.}
+\begin{frame}[fragile]{Lean 2/6: the bottom-gain threshold}
+\[0<a<\tfrac13\quad\Longrightarrow\quad
+\left(\tfrac15<\frac{a}{2(1-a)}\iff\tfrac27<a\right).\]
+\lstinputlisting[firstline=21,lastline=30,basicstyle=\ttfamily\footnotesize]{lean/DiscreteCalculations.lean}
+\medskip
+\texttt{bottomGain} proves both directions over real numbers.\par
+\textbf{Build: PASS.} This is the finite wage inequality, not Proposition 5.
 \end{frame}
 
-\begin{frame}[fragile]{Read the proof as four mathematical moves}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{.51\textwidth}
-\labeltext{THE RELEVANT PROOF FRAGMENT}
-\lstinputlisting[firstline=27,lastline=32,basicstyle=\ttfamily\fontsize{8.8}{11}\selectfont]{lean/FirmAlgebra.lean}
-\vspace{3mm}
-\small The underscores discard hypotheses unused by this algebra: $h<1$ and $z\ge0$. They remain in the contract.
-\end{column}
-\begin{column}{.44\textwidth}
-\labeltext{WHAT EACH STEP DOES}
-\small
-\textbf{1. Introduce}\quad fix the scalars and premises.\\[2mm]
-\textbf{2. Prove}\quad $h>0$ and $z<1$ imply $h\ne0$ and $1-z\ne0$.\\[2mm]
-\textbf{3. Expand and clear}\quad replace definitions, multiply out denominators.\\[2mm]
-\textbf{4. Conclude}\quad polynomial arithmetic gives the wage identity.
-\end{column}
-\end{columns}
-\take{Nonzero denominators are part of the proof, not a silent simplification.}
-\src{The tactic produces a proof term checked by Lean. Familiar theorem names alone do not establish source fidelity.}
+\begin{frame}[fragile]{Lean 3/6: why the inequality proof works}
+\lstinputlisting[firstline=26,lastline=30]{lean/DiscreteCalculations.lean}
+\vspace{5mm}
+\begin{points}
+\item \texttt{hden}: prove $2(1-a)>0$ from the stated domain.
+\item \texttt{lt\_div\_iff\textsubscript{0}}: clear division without reversing the inequality.
+\item \texttt{constructor}: split ``if and only if'' into two directions.\par
+\texttt{linarith} closes each direction by linear arithmetic.
+\end{points}
 \end{frame}
 
-\begin{frame}{The same identity exposes the cost of autonomy}
-\labeltext{THE CHECKED IDENTITY: $w=a-h(1-z)r$}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{.47\textwidth}\labeltext{AUTONOMOUS RENT: $r=a$}
-\[w^A=a[1-h(1-z)].\]
-\small \texttt{autonomous\_wage} specializes the identity, then \texttt{ring} factors the expression.\end{column}
-\begin{column}{.47\textwidth}\labeltext{CO-PILOT RENT: $r=0$}
-\[w^N=a.\]
-\small \texttt{nonautonomous\_wage} substitutes zero rent; \texttt{simpa} simplifies.\end{column}
-\end{columns}
-\vspace{0mm}
-\[a-a[1-h(1-z)]=a\,h(1-z)>0\quad\text{if }a>0,\ h>0,\ z<1.\]
-\take{This compares one firm's wage formulas. Lean has \textbf{not} shown that these roles are active or that equilibrium rents take those values.}
-\src{FirmAlgebra.lean: autonomous\_wage, nonautonomous\_wage, opportunity\_cost\_gap. All compiled in the original run.}
+\begin{frame}[fragile]{Lean 4/6: zero profit implies a wage identity}
+\[n(z)=\frac1{h(1-z)},\qquad n(z)(a-w)-r=0
+\quad\Longrightarrow\quad w=a-h(1-z)r.\]
+\lstinputlisting[firstline=28,lastline=32,basicstyle=\ttfamily\footnotesize]{lean/FirmAlgebra.lean}
+\medskip
+\texttt{zeroProfitWage} uses $h>0$ and $z<1$ to justify division.\par\medskip
+\textbf{Build: PASS.} It checks conditional algebra over real scalars;\par
+it does not establish market clearing or equilibrium rents.
 \end{frame}
 
-\begin{frame}[fragile]{The discrete threshold gets an ``if and only if'' proof}
-\[
-0<a<\tfrac13\quad\Longrightarrow\quad
-\left(\frac15<\frac{a}{2(1-a)}\ \Longleftrightarrow\ \frac27<a\right).
-\]
-\lstinputlisting[firstline=21,lastline=30,basicstyle=\ttfamily\fontsize{9}{10.5}\selectfont]{lean/DiscreteCalculations.lean}
-\small\texttt{hden} licenses inequality-preserving division. \texttt{constructor} splits the equivalence into two implications; \texttt{linarith} proves each.
-\src{Discrete.bottomGain: build PASS. This checks the candidate-wage threshold; the equilibrium interpretation is a separate obligation.}
+\begin{frame}{Lean 5/6: a missing assumption changes the claim}
+Dropping $z<1$ allows
+\[h=\tfrac12,\quad z=1,\quad a=\tfrac12,\quad w=1,\quad r=0.\]
+\begin{points}
+\item Lean's real division is total: here $n(z)=0$.
+\item Profit is zero, but the proposed wage identity says $1=1/2$.
+\item The separate counterexample compiles successfully.
+\end{points}
+\vspace{4mm}
+This tests unrestricted algebra; it is not an admissible economic team.
 \end{frame}
 
-\begin{frame}{A missing assumption changes the mathematical claim}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{.46\textwidth}
-\labeltext{WHAT FAILED DURING THE RUN}
-\small The first denominator-clearing attempt supplied only a product's nonzero proof. A factor denominator remained.\\[3mm]
-The successful proof explicitly supplied both $h\ne0$ and $1-z\ne0$.
-\end{column}
-\begin{column}{.49\textwidth}
-\labeltext{WHAT FAILS IF WE DROP $z<1$}
-\small In Lean, real division is total. At
-\[h=\tfrac12,\ z=1,\ a=\tfrac12,\ w=1,\ r=0,\]
-$n(z)=0$ and profit is zero, but the proposed conclusion would say $1=1/2$.
-\end{column}
-\end{columns}
-\take{The new boundary check compiles. It is a counterexample to \textbf{unrestricted algebra}, not an admissible economic team. Domain restrictions carry content.}
-\src{Run history: lean/docs/RUN\_REPORT.md. New presentation-only check: analysis/BoundaryCheck.lean; original lean/ snapshot unchanged.}
-\end{frame}
-
-\begin{frame}{What passed, what failed, and what remains open}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{.47\textwidth}
-\labeltext{BUILD / PROOF EVIDENCE}
-\small\textbf{PASS}\quad support modules and full root build.\\[3mm]
-\textbf{PASS}\quad required paper \texttt{--fast} check, exit 0.\\[3mm]
-\textbf{No \texttt{sorryAx}} in the four inspected endpoints; only standard Lean foundations.
-\end{column}
-\begin{column}{.47\textwidth}
-\labeltext{SOURCE / COVERAGE EVIDENCE}
-\small\textbf{STOPPED}\quad semantic preflight, exit 2: source statement map missing.\\[3mm]
-\textbf{0 of 6}\quad continuum propositions proved.\\[3mm]
-\textbf{Open}\quad measurable matching, equilibrium, sorting, uniqueness, and source-to-Lean audits.
-\end{column}
-\end{columns}
-\take{The algebra generalizes $a,w,r$ to arbitrary reals. The finite model changes the population domain. Neither result silently inherits the full source theorem.}
-\src{Actual logs: lean/docs/checks/. A successful fast check can compile an empty source interface; it is not semantic acceptance.}
+\begin{frame}{Lean 6/6: what passed and what remains open}
+\begin{center}
+\begin{tabular}{lp{8cm}}\toprule
+Status & Evidence\\\midrule
+PASS & Support proofs, full build, and required fast check.\\
+STOPPED & Semantic preflight: missing source statement map.\\
+0 of 6 & Full continuum propositions proved.\\\bottomrule
+\end{tabular}
+\end{center}
+\vspace{4mm}
+Matching, equilibrium, sorting, and source-level audits remain open.
+\begin{block}{What I learned}
+A checked proof is useful when its assumptions and scope are explicit.
+\end{block}
 \end{frame}

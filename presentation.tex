@@ -1,302 +1,228 @@
-% Compatibility with a newer local hyperref on a pre-metadata LaTeX kernel.
+% Compatibility with the local hyperref / LaTeX installation.
 \providecommand\IfDocumentMetadataT[1]{}
-\documentclass[aspectratio=169,11pt]{beamer}
+\documentclass[aspectratio=169,12pt]{beamer}
 \input{analysis/theme.tex}
-\hypersetup{pdftitle={AI in the knowledge economy: autonomy, capability, and proof},pdfauthor={Ide and Talamas (2025); weekly presentation}}
+\title{Artificial Intelligence in the Knowledge Economy}
+\subtitle{Autonomy, capability, and a Lean verification exercise}
+\author{Enrique Ide \and Eduard Talam\`as (2025)}
+\institute{\href{https://github.com/gsaco/ai-05-ide}{github.com/gsaco/ai-05-ide}}
+\date{}
 \begin{document}
+\begin{frame}[plain]\titlepage\end{frame}
 
-% 01 — 0:24
-{\setbeamercolor{background canvas}{bg=ink}
-\begin{frame}[plain]
-\vspace{3mm}
-{\color{mint}\small\bfseries ECONOMIC MODELING $\times$ FORMAL VERIFICATION}\par
-\vspace{7mm}
-{\color{white}\fontsize{31}{35}\selectfont\bfseries Who gains\\from AI?}\par
+\section{The paper}
+\begin{frame}{Question and source}
+\begin{block}{Who gains when knowledge becomes scalable?}
+We track bottom wages, top wages, and total output.
+\end{block}
 \vspace{4mm}
-{\color{mint}\Large Autonomy. Capability. Proof.}\par
-\vspace{5mm}
-{\color{white}\normalsize Ide \& Talam\`as (2025)}\par
-\vfill
-{\color{white}\small\href{https://github.com/gsaco/ai-05-ide}{github.com/gsaco/ai-05-ide}}\par
-\vspace{3mm}
-{\color{white!65}\scriptsize Read: course PDF, May 20, 2025 (39 pp).\quad Lean pin: arXiv v11, February 25, 2025 (35 pp).}
-\end{frame}}
+\begin{points}
+\item Course reading: May 20, 2025, 39 pages.
+\item Lean source: arXiv v11, February 25, 2025, 35 pages.
+\item Focus: Propositions 5 and 6, then a three-type example.
+\end{points}
+\end{frame}
 
-\begin{frame}{Two dimensions. Three outcomes.}
+\begin{frame}{Autonomy and capability are different dimensions}
 \begin{columns}[T,onlytextwidth]
-\begin{column}{.48\textwidth}
-\labeltext{AUTONOMY = PERMITTED ROLES}
-\textbf{Autonomous AI}\\[2mm]
-Produces, works, and advises.\\[4mm]
-\textbf{Co-pilot-only AI}\\[2mm]
-Advises; cannot initiate production.
+\begin{column}{.47\textwidth}
+\begin{block}{Autonomy: permitted roles}
+Autonomous AI can produce, work, and advise.\par\medskip
+Co-pilot-only AI can advise.
+\end{block}
 \end{column}
-\begin{column}{.48\textwidth}
-\labeltext{CAPABILITY = KNOWLEDGE}
+\begin{column}{.47\textwidth}
+\begin{block}{Capability: knowledge}
 \[a=z_{AI}\in[0,1).\]
-The fraction of problems AI can solve.\\[4mm]
-A permitted role may still be unprofitable.
+The fraction of problems AI can solve.
+\end{block}
 \end{column}
 \end{columns}
-\take{Track \textbf{bottom wages}, \textbf{top wages}, and \textbf{total output}. The sign cannot be inferred from autonomy alone.}
-\src{Today: source claims $\to$ a three-type economy $\to$ seven slides on what Lean checks.}
+\vspace{5mm}
+Holding autonomy fixed does not fix who gains.
 \end{frame}
 
-\begin{frame}{Knowledge helps only when someone supplies time}
-\centering
-\begin{tikzpicture}[>=Latex,node distance=16mm]
-\node[draw=hairline,fill=wash,text width=30mm,align=center,inner sep=3mm] (w) {Worker $z$\\\small pursues a problem};
-\node[right=of w,draw=hairline,fill=wash,text width=30mm,align=center,inner sep=3mm] (s) {Solver $s>z$\\\small handles exceptions};
-\node[right=of s,text width=24mm,align=center] (o) {Expected output\\$n(z)s$};
-\draw[->,thick,teal] (w)--node[above,font=\scriptsize] {failure: $1-z$}(s);
-\draw[->,thick,teal] (s)--(o);
-\end{tikzpicture}
-\[
-h\,n(z)(1-z)=1
-\quad\Longrightarrow\quad n(z)=\frac{1}{h(1-z)}.
-\]
-\[
-\max_{\text{organization},\,z,s}\Pi,
-\qquad \Pi_{HH}=n(z)[s-w(z)]-w(s).
-\]
-\small Humans maximize income; firms choose teams; competitive entry sets active profits to zero. Labor and compute markets clear.
-\src{Section 3.1. Difficulty is uniform on $[0,1]$; each request costs $h$ solver time, successful or not.}
+\begin{frame}{The agent's problem: organize knowledge and time}
+A worker with knowledge $z$ asks a solver $s>z$ for help.
+\[h\,n(z)(1-z)=1
+\quad\Longrightarrow\quad n(z)=\frac{1}{h(1-z)}.\]
+\begin{block}{Firm profit}
+\[\Pi_{HH}=n(z)[s-w(z)]-w(s).\]
+\end{block}
+Humans maximize income; firms choose teams to maximize profit.\par\medskip
+Free entry and market clearing determine wages and AI rents.
 \end{frame}
 
-\begin{frame}{Keep the conditions attached to the result}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{.49\textwidth}
-\labeltext{PEOPLE AND FIRMS}
-\small Unit human mass; one unit of time each. Observable knowledge $z\in[0,1]$ with continuous, strictly positive density.\\[3mm]
-Independent uniform difficulties; risk neutrality; output price one. Competition, complete information, no fixed costs; at most two layers.
-\end{column}
-\begin{column}{.46\textwidth}
-\labeltext{TECHNOLOGY AND SCARCITY}
-\small $0<h<h_0$: no independent humans before AI.\\[3mm]
-$a<1$: perfect AI is excluded.\\[3mm]
-Compute abundant relative to human time; opportunities exceed production capacity.\\[3mm]
-Compare autonomy at the same $a$ and $\mu$.
-\end{column}
-\end{columns}
-\take{The source's top-winner result needs \textbf{both $h<h_0$ and $a<1$}. The appendix gives the sufficient compute bound.}
-\src{Sections 3.1, 3.3, 5.2 and 6. These continuum assumptions are not inherited by the finite example.}
+\begin{frame}{Conditions: people, problems, and firms}
+\begin{points}
+\item Unit human mass; one unit of time per human.
+\item Observable $z\in[0,1]$ with continuous, positive density.
+\item Independent uniform problem difficulty; risk neutrality.
+\item Competition, complete information, output price one.
+\item No fixed costs; at most two organizational layers.
+\end{points}
 \end{frame}
 
-\begin{frame}{Proposition 5: capability creates bottom winners}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{.59\textwidth}
-\labeltext{BOTTOM: A STRICT THRESHOLD}
-\[
-B\ne\varnothing\quad\Longleftrightarrow\quad a>\bar a,
-\qquad\bar a\in\operatorname{int}W.
-\]
-\small $W$: the pre-AI worker set. $B$: humans below AI who earn more than before.\\[3mm]
-The threshold lies \emph{inside} the worker region: some ``basic'' AI already benefits the bottom.
-\end{column}
-\begin{column}{.35\textwidth}
-\labeltext{TOP: ALWAYS SOME WINNERS}
-\[T\ne\varnothing\quad\forall a\in[0,1).\]
-\small Under the stated conditions, some humans above AI gain.\\[3mm]
-The human with knowledge $a$ loses.
-\end{column}
-\end{columns}
-\take{Autonomy is held fixed in this proposition. \textbf{Capability still changes the distributional conclusion.}}
-\src{$B=\{z\le a:\wa(z)>w(z)\}$, $T=\{z\ge a:\wa(z)>w(z)\}$ within $[0,1]$. v11 p.24 / course p.25.}
+\begin{frame}{Conditions: scarce time and abundant compute}
+\begin{points}
+\item $0<h<h_0$: no independent humans before AI.
+\item $a<1$: AI is not perfectly knowledgeable.
+\item Production opportunities exceed production capacity.
+\item Compare autonomy at the same capability $a$ and compute $\mu$.
+\end{points}
+\begin{block}{A sufficient compute-abundance condition}
+\[\mu>\int_0^a h(1-z)\,dG(z)+\frac{1-G(a)}{h(1-a)}.\]
+\end{block}
 \end{frame}
 
-\begin{frame}{Proposition 6: free advice must still be useful}
-\begin{center}\small
-\begin{tabular}{p{30mm}p{90mm}}
+\begin{frame}{Proposition 5: capability determines bottom gains}
+Let $B$ and $T$ be strict wage winners below and above AI.
+\begin{block}{Bottom: a capability threshold}
+\[B\ne\varnothing\quad\Longleftrightarrow\quad a>\bar a,
+\qquad \bar a\in\operatorname{int}W.\]
+$W$ is the pre-AI worker set.
+\end{block}
+\begin{points}
+\item Top: $T\ne\varnothing$ for every $a<1$, under the stated conditions.
+\item Winners occupy endpoint intervals; the human with $z=a$ loses.
+\end{points}
+\end{frame}
+
+\begin{frame}{Proposition 6: adoption still requires capability}
+Co-pilot-only equilibrium has zero AI rent: $r^N=0$.
+\vspace{5mm}
+\begin{center}
+\begin{tabular}{lp{8cm}}
 \toprule
-\textbf{Capability} & \textbf{Co-pilot-only equilibrium, $r^N=0$}\\
-\midrule
-$a\le w(0)$ & No adoption. Wages and occupations unchanged.\\
-$a>w(0)$ & Lowest-knowledge humans adopt. Strict bottom gains and some strict human losses.\\
-\bottomrule
-\end{tabular}\end{center}
-\vspace{2mm}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{.31\textwidth}\labeltext{NEAR THE BOTTOM}\small $\wn\ge\max\{w,\wa\}$; strict if $a>w(0)$.\end{column}
-\begin{column}{.31\textwidth}\labeltext{NEAR THE TOP}\small $\wn\le\wa$; strict away from $z=1$.\end{column}
-\begin{column}{.31\textwidth}\labeltext{TOTAL OUTPUT}\small $Y^A>Y^N$. Efficiency is relative to the permitted technology.\end{column}
-\end{columns}
-\take{$w(0)$ is an \textbf{adoption threshold}; $\bar a$ is an \textbf{autonomous bottom-gain threshold}. They are distinct.}
-\src{v11 p.27 / course p.28. Complete quantifiers, uniqueness and occupational clauses: appendix.}
+Capability & Outcome\\\midrule
+$a\le w(0)$ & No adoption; wages and occupations unchanged.\\[3mm]
+$a>w(0)$ & Lowest-knowledge humans adopt; strict bottom gains and some strict human losses.\\\bottomrule
+\end{tabular}
+\end{center}
+\vspace{4mm}
+The adoption threshold $w(0)$ differs from the P5 threshold $\bar a$.
 \end{frame}
 
-\renewcommand{\chaptertag}{02\quad THE THREE-TYPE CHECK}
-\begin{frame}{Three types make the wage equations tangible}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{.39\textwidth}
-\labeltext{OUR FINITE ECONOMY}
+\begin{frame}{Proposition 6: bottom, top, and total output}
+\begin{points}
+\item Near the bottom: $\wn\ge\max\{w,\wa\}$.\par
+Strict if $a>w(0)$.
+\item Near the top: $\wn\le\wa$.\par
+Strict below $z=1$.
+\item Total output: $Y^A>Y^N$.
+\end{points}
+\vspace{4mm}
+The co-pilot equilibrium is unique, efficient, and maximizes labor income \emph{within its permitted technology}.
+\end{frame}
+
+\begin{frame}{A three-type economy we can solve directly}
+\begin{columns}[c,onlytextwidth]
+\begin{column}{.38\textwidth}
 \begin{tabular}{lrr}\toprule
 Type & $z$ & Mass\\\midrule
 Low & $0$ & $.55$\\
 Middle & $1/2$ & $.30$\\
 High & $1$ & $.15$\\\bottomrule
-\end{tabular}\\[3mm]
-$h=1/2,\quad\mu=2$.
+\end{tabular}
+\[h=\tfrac12,\quad\mu=2.\]
 \end{column}
-\begin{column}{.55\textwidth}
-\labeltext{ZERO PROFIT BEFORE AI}
-\[
-u+\tfrac12v=\tfrac12,\quad u+\tfrac12t=1,\quad v+\tfrac14t=1.
-\]
-Subtract the first two: $t-v=1$. Then
-\[\boxed{(u,v,t)=(.2,.6,1.6)}.\]
-\small Worker masses $(L\to M,L\to H,M\to H)$\\are $(.32,.23,.14)$; all resources clear.
+\begin{column}{.57\textwidth}
+Before AI, zero profit gives
+\begin{align*}
+u+\tfrac12v&=\tfrac12,\\
+u+\tfrac12t&=1,\\
+v+\tfrac14t&=1.
+\end{align*}
+Hence $(u,v,t)=(.2,.6,1.6)$.
 \end{column}
 \end{columns}
-\take{The finite economy is derived directly. It changes the source's continuous-density assumption.}
-\src{Complete resource equations and no-entry checks: analysis/derivation.md. Baseline output $Y_0=.53$.}
+\vspace{4mm}
+This finite example changes the paper's population assumption.
 \end{frame}
 
-\begin{frame}{Autonomous AI pins wages through outside options}
-\labeltext{DERIVED BRANCH: $0<a<1/3$; SPARE COMPUTE PINS $r^A=a$}
+\begin{frame}{Autonomous AI: solve one equilibrium branch}
+For $0<a<1/3$, spare compute pins the rent at $r^A=a$.
+\vspace{5mm}
 \begin{center}
-\begin{tabular}{p{66mm}l}\toprule
-\textbf{Active human role} & \textbf{Competitive wage}\\\midrule
-High: supervise AI workers & $t=(1-a)/[(1-a)/2]=2$\\[3mm]
-Middle: supervise AI workers & $v=(1-2a)/(1-a)$\\[3mm]
-Low: work with middle solvers & $u=\frac12-\frac12v=a/[2(1-a)]$\\\bottomrule
+\begin{tabular}{ll}\toprule
+Human role & Wage\\\midrule
+High: supervise AI workers & $t=2$\\[2mm]
+Middle: supervise AI workers & $v=(1-2a)/(1-a)$\\[2mm]
+Low: work with middle solvers & $u=\frac12-\frac12v=\dfrac{a}{2(1-a)}$\\\bottomrule
 \end{tabular}
 \end{center}
-\take{$.55$ low workers use $.275$ middle solvers. The remaining $.025$ middle humans supervise AI, pinning $v$.}
-\src{AI-worker compute use $7/[20(1-a)]<2$; spare compute and all no-entry inequalities checked.}
+\vspace{4mm}
+Resource clearing and no profitable entry validate this branch.
 \end{frame}
 
-\begin{frame}{Same autonomy; the bottom changes from loss to gain}
-\[
-\frac{a}{2(1-a)}>\frac15
-\quad\Longleftrightarrow\quad 5a>2(1-a)
-\quad\Longleftrightarrow\quad \boxed{a>\frac27}.
-\]
+\begin{frame}{Same autonomy, different bottom outcomes}
+\[\frac{a}{2(1-a)}>\frac15
+\quad\Longleftrightarrow\quad5a>2(1-a)
+\quad\Longleftrightarrow\quad a>\frac27.\]
+\vspace{4mm}
+\begin{center}
+\begin{tabular}{ccc}\toprule
+Capability & Bottom wage & Versus $.20$\\\midrule
+$a=.20$ & $.125$ & Loss\\
+$a=.30$ & $3/14$ & Gain\\\bottomrule
+\end{tabular}
+\end{center}
+\vspace{4mm}
+The denominator is positive on $0<a<1/3$. Equality is not a gain.
+\end{frame}
+
+\begin{frame}{Numerical results separate the two dimensions}
 \centering
-\begin{tikzpicture}[x=1cm,y=1cm]
-\draw[line width=2pt,rust] (0,0)--(7.4,0);
-\draw[line width=2pt,teal] (7.4,0)--(10.4,0);
-\fill[rust] (3.5,0) circle(2.4pt);\fill[teal] (8.5,0) circle(2.4pt);
-\draw[ink,fill=white,line width=1pt] (7.4,0) circle(3pt);
-\node[above=3mm,align=center] at(3.5,0){$a=.20$\\\small $u=.125<.20$};
-\node[above=3mm,align=center] at(8.5,0){$a=.30$\\\small $u=3/14>.20$};
-\node[below=3mm,rust] at(3.5,0){LOSES};
-\node[below=3mm,teal] at(8.5,0){GAINS};
-\node[below=9mm,font=\small] at(7.4,0){$2/7$: equality};
-\node[below=3mm,font=\small] at(0,0){$0$};
-\node[below=3mm,font=\small] at(10.4,0){$1/3$};
-\end{tikzpicture}
-\take{The denominator is positive. At $a=2/7$ there is \emph{no strict gain}. Lean will check exactly this inequality and its domain.}
-\src{Schematic line; positions are illustrative. $2/7$ is our finite-branch threshold, not the continuum's numerical cutoff.}
+\includegraphics[width=\textwidth]{figures/discrete_wages.pdf}
+\vspace{3mm}
+Across panels: change capability.\par\medskip
+Within each panel: change autonomy.
 \end{frame}
 
-\begin{frame}{The numerical check captures both dimensions}
-\centering
-\includegraphics[width=\textwidth,height=.57\textheight,keepaspectratio]{figures/discrete_wages.pdf}
-\vspace{2mm}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{.48\textwidth}\small\textbf{Read across panels:} change capability while holding autonomy fixed.\end{column}
-\begin{column}{.48\textwidth}\small\textbf{Read within a panel:} change autonomy at the same capability and compute.\end{column}
-\end{columns}
-\src{Seven equilibria. Feasibility, no profitable entry, complementary slackness, duality and wage uniqueness checked. Lines join three types only.}
-\end{frame}
-
-\begin{frame}{More output need not mean more human wage income}
-\labeltext{HOLD $a=.4$ AND $\mu=2$ FIXED ACROSS AI REGIMES}
-\begin{center}\begin{tabular}{lrrr}\toprule
- & Labor income & Compute income & Total output\\\midrule
+\begin{frame}{More output does not imply more labor income}
+Same capability $a=.4$ and compute supply $\mu=2$.
+\vspace{5mm}
+\begin{center}
+\begin{tabular}{lrrr}\toprule
+ & Labor income & Compute income & Output\\\midrule
 No AI & $.5300$ & $0$ & $.5300$\\
 Co-pilot only & $\mathbf{.6100}$ & $0$ & $.6100$\\
 Autonomous & $.5875$ & $.8000$ & $\mathbf{1.3875}$\\\bottomrule
-\end{tabular}\end{center}
-\vspace{2mm}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{.47\textwidth}\labeltext{WHY OUTPUT RISES}\small Autonomy allows every co-pilot allocation plus independent AI production. If $a>0$, idle compute $\delta>0$ adds $a\delta>0$.\end{column}
-\begin{column}{.47\textwidth}\labeltext{WHY DISTRIBUTION DIFFERS}\small At $a=.4$, co-pilot wages are $(.4,.7,1.2)$; autonomous wages are $(.25,.5,2)$. Expertise and compute ownership matter.\end{column}
-\end{columns}
-\src{At $a=0$, independent output cannot establish strictness; AI workers assisted by humans supply a separate mechanism.}
+\end{tabular}
+\end{center}
+\vspace{4mm}
+The numerical program checks feasibility, no profitable entry,\par
+primal--dual equality, and wage uniqueness.
 \end{frame}
 
-\input{analysis/lean-slides.tex}
-
-\renewcommand{\chaptertag}{04\quad THE HUMAN CHECK}
-\begin{frame}{The step to check on a handwritten page}
+\begin{frame}{The claim I would not accept without checking}
+\begin{block}{The misleading gloss}
+``Distribution depends on autonomy, not capability.''
+\end{block}
 \IfFileExists{hand/derivation.jpg}{%
-\begin{columns}[T,onlytextwidth]
-\begin{column}{.58\textwidth}\includegraphics[width=\linewidth,height=.65\textheight,keepaspectratio]{hand/derivation.jpg}\end{column}
-\begin{column}{.37\textwidth}\labeltext{AUTONOMY HELD FIXED}
-\[\frac{a}{2(1-a)}>\frac15\iff a>\frac27.\]
-\small Explain why the denominator is positive, why equality is not a gain, and why this is a finite-model result.\end{column}\end{columns}
+\centering\includegraphics[height=.47\textheight]{hand/derivation.jpg}
 }{%
-\labeltext{THE CLAIM UNDER SCRUTINY}
-\large ``Distribution depends on autonomy, not capability.''\par
-\vspace{3mm}
-\normalsize The calculation gives a different verdict:
-\[\frac{a}{2(1-a)}>\frac15\iff a>\frac27,\qquad0<a<\frac13.\]
-\take{\textbf{Photo pending.} Write and verify the derivation yourself, then save the genuine photograph as \texttt{hand/derivation.jpg}. Recompile to show it here.}
+\[\frac{a}{2(1-a)}>\frac15\iff a>\frac27,
+\qquad0<a<\frac13.\]
+\medskip
+The genuine handwritten photograph is still pending.
 }
-\src{The typeset exercise supports preparation; it does not substitute for the required handwritten evidence or your own verdict.}
+\medskip\par
+\textbf{Verdict:} capability changes the sign even at fixed autonomy.
 \end{frame}
 
-\begin{frame}{The result is stronger when its boundary is explicit}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{.47\textwidth}
-\labeltext{ECONOMIC CONCLUSION}
-\textbf{Bottom:} capability crosses a threshold.\\[3mm]
-\textbf{Top:} autonomy scales expertise under $h<h_0$ and $a<1$.\\[3mm]
-\textbf{Output:} more feasible uses of compute increase production.
-\end{column}
-\begin{column}{.47\textwidth}
-\labeltext{VERIFICATION CONCLUSION}
-\textbf{By hand:} a finite equilibrium branch.\\[3mm]
-\textbf{Numerically:} allocations and prices agree.\\[3mm]
-\textbf{In Lean:} specified algebra follows from explicit assumptions.
-\end{column}
-\end{columns}
-\take{\textbf{Autonomy and capability both matter.} A valid proof is valuable precisely because we can say what it proves---and what remains outside it.}
-\src{Source: Ide \& Talam\`as (2025), arXiv v11. Repository: github.com/gsaco/ai-05-ide.}
+\begin{frame}{What the paper and the example teach us}
+\begin{points}
+\item \textbf{Bottom:} capability must cross a threshold.
+\item \textbf{Top:} autonomy scales expertise under the stated conditions.
+\item \textbf{Output:} autonomous AI permits additional productive uses.
+\end{points}
+\vspace{6mm}
+\begin{block}{Next: what can Lean verify?}
+Six slides on statements, proofs, assumptions, and remaining gaps.
+\end{block}
 \end{frame}
 
-\appendix
-\renewcommand{\chaptertag}{REFERENCE\quad FOR QUESTIONS}
-\begin{frame}{Proposition 6: the complete quantifiers}
-\small The non-autonomous equilibrium is unique, efficient, maximizes labor income within its technology, and $r^N=0$. If $a\le w(0)$, AI is unused. If $a>w(0)$:
-\[W_a^N\preceq(W_p^N\cup I^N\cup S_p^N),\qquad W_a^N,W_p^N,S_p^N\ne\varnothing;\]
-only $I^N$ may be empty. In either case,
-\begin{align*}
-&Y^A>Y^N;\\
-&\exists z\in(0,1]:\ \wn(z)\le w(z)\quad(\text{strict if }a>w(0));\\
-&\exists\epsilon>0\ \forall z\in[0,\epsilon):\ \wn(z)\ge\max\{w(z),\wa(z)\}\\
-&\hspace{48mm}(\text{strict if }a>w(0));\\
-&\exists\epsilon>0\ \forall z\in(1-\epsilon,1]:\ \wn(z)\le\wa(z)\quad(\text{strict if }z\ne1).
-\end{align*}
-\src{v11 p.27 / course p.28. $W_a$: AI-assisted; $W_p$: human-assisted; $I$: independent; $S_p$: human solvers.}
-\end{frame}
-
-\begin{frame}{What the optimization program actually checks}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{.47\textwidth}\labeltext{PRIMAL: CHOOSE ACTIVITIES}
-\[\max_{x\ge0}\ q^\top x\quad\text{s.t. }Ax\le b.\]
-\small An activity uses human time and compute. The three human masses and $\mu$ form $b$.\end{column}
-\begin{column}{.47\textwidth}\labeltext{DUAL: PRICE RESOURCES}
-\[\min_{p\ge0}\ b^\top p\quad\text{s.t. }A^\top p\ge q.\]
-\small Payments cover output in every potential firm: no profitable entry. Active firms have equality.\end{column}
-\end{columns}
-\take{Matching primal output to dual factor income certifies the selected finite equilibrium. Checking the optimal dual wage range avoids mistaking one solver's prices for unique wages.}
-\src{analysis/discrete\_model.py; analysis/results.json; checks/computation.txt. This is not a continuum proof.}
-\end{frame}
-
-\begin{frame}{Source pin, abundance, and reproducibility}
-\[
-\mu>\int_0^a h(1-z)\,dG(z)+\frac{1-G(a)}{h(1-a)}
-\]
-\small This is a sufficient abundance condition in the source.\\[3mm]
-\begin{tabular}{lll}\toprule
- & \textbf{Course reading} & \textbf{Lean source pin}\\\midrule
-Date & May 20, 2025 & February 25, 2025\\
-Version / length & v12 / 39 pages & v11 / 35 pages\\
-Propositions 5 / 6 & pp.25 / 28 & pp.24 / 27\\\bottomrule
-\end{tabular}\\[4mm]
-\textbf{Reproduce:} \texttt{make analysis slides}. Check Lean in the pinned AppliedModelingLib clone, not as a standalone weekly-folder project.
-\src{arxiv.org/abs/2312.05481v11. Submission stamp: February 24 UTC. Citation year 2025; Talam\`as uses a grave accent.}
-\end{frame}
+\section{Lean formalization}
+\input{analysis/lean-slides.tex}
 \end{document}

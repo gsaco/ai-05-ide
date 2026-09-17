@@ -1,14 +1,16 @@
-# Presentation validation
+# Presentation validation — classic Beamer revision
 
-- Revised deck: 23 pages, comprising 20 timed main slides and 3 reference slides. Rehearsal notes allocate 20 minutes, including 8.6 minutes across seven Lean slides.
-- Source compiled successfully in two passes. Final log contains no LaTeX errors, warnings, overfull boxes, or undefined references.
-- All 23 final pages were rendered at 120 dpi and individually visually inspected: no clipping, overlap, or illegible proof excerpts found. The automated layout audit also reported no warnings.
-- The audit reader required filtering invalid XML control characters emitted by pdftotext for mathematical glyphs; bounding-box geometry and all layout checks were preserved.
-- The required Lean sequence shows the original equation, directly included Lean contract and proof fragment, and an interpretation. Additional slides explain denominator conditions, proof tactics, the finite threshold, a failed attempt, a checked boundary counterexample, and partial coverage.
-- The new presentation-only counterexample passed Lean (exit 0); see presentation-boundary-check.json. It is outside the frozen original lean/ folder.
-- SHA-256 comparison confirmed all 34 original generated Lean-folder files remain unchanged, including local ignored source bytes. No source-coverage claim was upgraded: 0/6 full continuum propositions are proved.
-- README banner was visually inspected; all local SVG assets parse successfully. Status badges explicitly describe the recorded run rather than live CI.
-- No animations or screenshots of the paper are used. The title slide contains the repository link; version dates and differing page numbers are explicit.
-- The genuine handwritten photograph remains missing. Slide 19 states this and includes hand/derivation.jpg automatically when supplied and recompiled.
+- 22 slides in English, 16:9: 16 paper/exercise slides followed by exactly 6 Lean slides.
+- Madrid theme, 12pt base text, white background, blue titles. Headlines, footlines, navigation icons, and footer notes are disabled.
+- Compiled with `make slides LATEX=/Library/TeX/texbin/pdflatex`; two passes, exit 0. No undefined references, missing files, or overfull/underfull boxes.
+- Automated layout audit: no warnings. All 22 rendered slides and the contact sheet were individually visually inspected.
+- Audit artifacts: `.tmp/classic-final/audit_report.md`, `.tmp/classic-final/contact_sheet.png`, and `.tmp/classic-final/pages/` (local ignored previews).
+- The audit parser filters invalid XML control characters from pdftotext while preserving bounding-box geometry.
+- Six Lean slides cover translation, the full finite-threshold statement and proof, proof explanation, the source wage identity, a checked counterexample, and honest build/coverage status.
+- Lean excerpts are directly included from the unchanged original files. SHA-256 checks confirm all 34 original generated files remain unchanged.
+- Existing Lean results remain unchanged: support build/fast check PASS; semantic preflight stopped; 0/6 full continuum propositions proved.
+- Full speaking details and source page references are in analysis/presentation-notes.md rather than slide footers. Timing totals exactly 20 minutes.
+- No animations or paper screenshots. Repository link is on the title slide.
+- Remaining requirement: genuine handwritten photograph, explicitly pending on slide 15. Supplying hand/derivation.jpg and rebuilding inserts it automatically.
 
-Raw prompts.md intentionally preserves user message whitespace and is excluded from whitespace cleanup.
+Raw prompts.md preserves the actual user text and is excluded from whitespace cleanup.

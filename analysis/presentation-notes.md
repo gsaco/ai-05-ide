@@ -1,57 +1,53 @@
-# Rehearsal: 20 minutes, with 8.6 minutes on Lean
+# Rehearsal: classic Beamer, 20 minutes
 
-The redesigned talk has 20 main slides and three reference slides. The Lean walkthrough occupies slides 12–18. The mathematical scope of the original `lean/` folder is unchanged. A new, separate boundary check supports the discussion of domain restrictions.
+22 slides in English: 16 on the paper and finite exercise, then exactly 6 on Lean. No notes or references are printed in the slide footers. These speaking notes remain separate from the deck.
 
 | Slide | Topic | Time | Cumulative |
 |---|---|---:|---:|
-| 1 | Question, authors, repository and versions | 0:24 | 0:24 |
-| 2 | Autonomy and capability | 0:42 | 1:06 |
-| 3 | Worker–solver technology and agent's problem | 0:48 | 1:54 |
-| 4 | Conditions on the paper's results | 0:36 | 2:30 |
-| 5 | Proposition 5: capability threshold | 1:00 | 3:30 |
-| 6 | Proposition 6: adoption and endpoint comparisons | 1:00 | 4:30 |
-| 7 | Three-type baseline | 1:00 | 5:30 |
-| 8 | Autonomous equilibrium branch | 1:00 | 6:30 |
-| 9 | Derive the strict threshold | 1:00 | 7:30 |
-| 10 | Read the numerical comparison | 0:48 | 8:18 |
-| 11 | Output versus labor income | 0:48 | 9:06 |
-| 12 | Translation versus proof | 0:54 | 10:00 |
-| 13 | Paper equation → Spec → proof → interpretation | 1:36 | 11:36 |
-| 14 | Explain each proof step | 1:18 | 12:54 |
-| 15 | Rent specializations and economic meaning | 0:54 | 13:48 |
-| 16 | The discrete iff proof | 1:18 | 15:06 |
-| 17 | Failed attempt and missing-assumption counterexample | 1:30 | 16:36 |
-| 18 | Actual checks and coverage boundary | 1:06 | 17:42 |
-| 19 | Real hand derivation and personal verdict | 1:18 | 19:00 |
-| 20 | Economic and verification conclusions | 1:00 | 20:00 |
+| 1 | Title | 0:15 | 0:15 |
+| 2 | Question and source | 0:30 | 0:45 |
+| 3 | Autonomy and capability are different dimensions | 0:40 | 1:25 |
+| 4 | The agent's problem: organize knowledge and time | 1:00 | 2:25 |
+| 5 | Conditions: people, problems, and firms | 0:35 | 3:00 |
+| 6 | Conditions: scarce time and abundant compute | 0:45 | 3:45 |
+| 7 | Proposition 5: capability determines bottom gains | 1:05 | 4:50 |
+| 8 | Proposition 6: adoption still requires capability | 0:55 | 5:45 |
+| 9 | Proposition 6: bottom, top, and total output | 0:55 | 6:40 |
+| 10 | A three-type economy we can solve directly | 1:05 | 7:45 |
+| 11 | Autonomous AI: solve one equilibrium branch | 1:10 | 8:55 |
+| 12 | Same autonomy, different bottom outcomes | 1:00 | 9:55 |
+| 13 | Numerical results separate the two dimensions | 0:40 | 10:35 |
+| 14 | More output does not imply more labor income | 0:50 | 11:25 |
+| 15 | The claim I would not accept without checking | 0:50 | 12:15 |
+| 16 | What the paper and the example teach us | 0:25 | 12:40 |
+| 17 | Lean 1/6: from economics to a precise statement | 0:50 | 13:30 |
+| 18 | Lean 2/6: the bottom-gain threshold | 1:30 | 15:00 |
+| 19 | Lean 3/6: why the inequality proof works | 1:15 | 16:15 |
+| 20 | Lean 4/6: zero profit implies a wage identity | 1:30 | 17:45 |
+| 21 | Lean 5/6: a missing assumption changes the claim | 1:10 | 18:55 |
+| 22 | Lean 6/6: what passed and what remains open | 1:05 | 20:00 |
 
-## What to say, beyond the slide text
+## Oral detail and source references
 
-**1–4.** Name Ide and Talamàs and say 2025. Identify the course reading and the v11 Lean pin separately. AI autonomy means permitted roles, not intelligence. Capability is a fraction of problems solved. A worker's failure consumes solver time, so n(z) follows from a resource equation. The human chooses income-maximizing work and the firm chooses the organization. In the source, h<h₀ and a<1 are substantive restrictions on the top-winner claim. Abundant compute does not mean abundant production opportunities; both conditions matter separately.
+**Slides 2–6.** Read Ide and Talamàs (2025), course PDF May 20, 39 pages; the Lean run pins arXiv v11, February 25, 35 pages. Explain that knowledge determines which problems can be solved; autonomy determines permitted production roles. Helping consumes time even when unsuccessful. The population has continuous positive density in the paper. The finite example changes that domain. The assumptions h<h₀, a<1, opportunity abundance, and compute abundance are substantive.
 
-**5–6.** Read “if and only if” and the strict inequality aloud. Since the autonomous threshold lies inside the pre-AI worker region, some basic autonomous AI benefits the bottom. For co-pilots, a≤w(0) means no adoption and unchanged wages. Do not turn a weak endpoint comparison into a strict gain. The top comparison is local and does not assert strictness at z=1. Refer questions about exact quantifiers and nonempty occupational sets to slide 21.
+**Slides 7–9.** Proposition 5 is v11 p.24 / course p.25; Proposition 6 is v11 p.27 / course p.28. Define B={z≤a:wᴬ(z)>w(z)} and T={z≥a:wᴬ(z)>w(z)} within [0,1]. The autonomous threshold is inside the pre-AI worker set. State the iff and strict inequality aloud. Under co-pilot adoption, AI-assisted workers, human-assisted workers, and human solvers are nonempty; independent humans may be absent. AI-assisted workers occupy the lowest positions. There exists ε>0 such that the bottom comparison holds for every z∈[0,ε); a possibly different ε gives the top comparison on (1−ε,1]. The top comparison is strict except at z=1. There is some z∈(0,1] with wᴺ(z)≤w(z), strict under adoption. Efficiency and labor-income maximization are within the co-pilot technology, not across technologies.
 
-**7–9.** Subtract the first two zero-profit equations to get t−v=1 and substitute into the third. The positive market-clearing allocation validates which equations are active. In the autonomous branch, .55 low workers consume .275 middle solvers; the residual .025 middle humans supervise AI, which pins their wage. At 2/7 the bottom is indifferent. Both .2 and .3 lie in the displayed branch, unlike the separate .4 computational case. The finite model allows one type's mass to split across roles; it is not the source's continuous-knowledge economy.
+**Slides 10–12.** Subtract the first two baseline zero-profit equations to get t−v=1; the third then gives v=.6, t=1.6, u=.2. Baseline worker masses for L→M, L→H, M→H are .32,.23,.14. In the autonomous branch .55 low workers use .275 middle solvers; the remaining .025 middle humans supervise AI and pin their wage. AI-worker compute demand 7/[20(1−a)]<2 leaves spare compute. All no-entry inequalities are checked in analysis/derivation.md. At a=2/7 there is equality, not a strict gain. This is not the numerical value of the continuum threshold.
 
-**10–11.** Read across panels to change capability and within a panel to change autonomy. At .4, co-pilot advice raises the bottom wage from .2 to .4, while the top falls from 1.6 to 1.2. Autonomous AI instead yields (.25,.5,2). The output table separates human income from compute-owner income. Feasible-set inclusion proves weak output dominance; positive capability and idle compute make that argument strict. At a=0 the independent-production argument fails, requiring AI workers helped by humans.
+**Slides 13–14.** The lines join only three discrete types. Compare across panels to isolate capability and within panels to isolate autonomy. At a=.4, co-pilot wages are (.4,.7,1.2), autonomous wages (.25,.5,2). Output includes compute-owner income. Autonomous production contains the co-pilot feasible set. If a>0 and compute is idle, independent AI adds strictly positive output; a=0 needs the separate human-assisted AI-worker mechanism. Numerical checks certify the finite examples, not the continuum theorem.
 
-**12.** A `Spec : Prop` is a proposition: a precise claim with domains and hypotheses. A theorem of that type is a proof of it. The source-to-Spec translation remains a separate audit question. Do not call the name `ZeroProfitWageSpec` evidence that the source was formalized correctly. The actual objects and conclusion must match.
+**Slides 15–16.** Do the derivation yourself and add the real photo as hand/derivation.jpg before presenting. The typeset placeholder is not the required handwritten evidence. Explain the verdict in your own words: capability changes bottom gains even when autonomy is held fixed.
 
-**13.** Identify all five real scalars: helping cost h, worker knowledge z, AI capability a, worker wage w, and compute rent r. `span` is 1/[h(1−z)] and `topAutomatedProfit` is n(z)(a−w)−r. The source uses the equation for an active top-automated team. The Lean theorem assumes zero profit explicitly; it does not derive activity or existence. Its bounds are 0<h<1 and 0≤z<1. It permits arbitrary real a,w,r: a valid algebraic generalization, not a claim that those values all describe an economic team. The code is included directly from the preserved source file.
+**Slide 17.** A Spec is a proposition. Lean checks a term of that type. The source-to-Spec translation is a separate audit, and a familiar theorem name is not evidence of source fidelity.
 
-**14.** `intro` fixes arbitrary scalars and assumptions. `hh` names h>0 and `hz` names z<1. `ne_of_gt` turns positivity into nonzeroness, and `sub_pos.mpr hz` proves 1−z>0. `unfold` replaces both definitions; `field_simp` clears denominators using those facts. `nlinarith` finishes the polynomial implication. The underscores ignore h<1 and z≥0 inside the proof, although both remain in the statement. A stronger or broader algebra lemma can still preserve economically meaningful restrictions in its interface.
+**Slides 18–19.** The displayed statement and proof are directly included from lean/DiscreteCalculations.lean. Real a is quantified, with 0<a<1/3. bottomWage is the candidate formula a/[2(1−a)], not a proven equilibrium object. hden proves positivity, which preserves the direction when clearing the fraction. constructor splits the equivalence; linarith checks each linear implication. The proof builds, but Proposition 5 remains unproved.
 
-**15.** Substitute r=a to get a[1−h(1−z)] and r=0 to get a. With a>0 the wedge a h(1−z) is positive. This is a firm-level opportunity-cost comparison, not Proposition 6: equilibrium may change the occupation and match of the human under comparison. In the actual Lean files, `ring` checks factoring and `simpa` checks the zero-rent simplification.
+**Slide 20.** FirmAlgebra.zeroProfitWage quantifies real h,z,a,w,r with 0<h<1 and 0≤z<1, and explicitly assumes zero profit. The displayed proof obtains both nonzero factors, unfolds span and profit, clears denominators, and finishes with nlinarith. Bounds h<1 and z≥0 remain in the statement although unused by the algebra. Arbitrary real a,w,r are an algebraic generalization. Active roles, market clearing, and equilibrium rent values are not established. The source equation is on v11 pp.10/12. The original run first failed to clear a remaining factor denominator when given only a product's nonzero proof; supplying both factors repaired that tactic step.
 
-**16.** `bottomWage` is a defined candidate formula, not an equilibrium object proved to exist. `hden` establishes a positive denominator, stronger than merely nonzero because an inequality direction is involved. `lt_div_iff₀` rewrites to an equivalent inequality. `constructor` splits the iff into necessity and sufficiency, and `linarith` proves both. The upper bound a<1/3 identifies the candidate equilibrium branch; the formal proof still does not establish market clearing or optimality.
+**Slide 21.** Distinguish a failed tactic from an invalid mathematical generalization. The counterexample at z=1 uses Lean's total real division. It is outside the worker domain and refutes only the unrestricted algebraic claim. analysis/BoundaryCheck.lean compiled with exit 0; its result is recorded separately in checks/presentation-boundary-check.json. The original lean/ snapshot is unchanged.
 
-**17.** The original run report records a failed factor-clearing attempt, repaired by supplying both nonzero factors. Distinguish that tactical failure from a false mathematical statement. The new presentation-only theorem verifies a counterexample to deleting the worker bound: at z=1, Lean's total real division gives span zero, allowing zero profit for a wage different from a. This tuple is outside the economic worker domain. It tests an unrestricted algebraic implication, not the paper. The new check is in `analysis/BoundaryCheck.lean`; it does not modify or upgrade the original formalization snapshot.
-
-**18.** The required fast check returned 0, and the root build succeeded. Four inspected proof endpoints have only standard Lean foundations and no `sorryAx`. This says nothing about nonexistent proofs: all six continuum propositions remain unproved. Semantic preflight returned 2 because the source statement map was missing. Explain the required remaining work in order: continuum objects, matching and clearing, complete Specs, proofs, independent semantic audit. An empty paper-facing interface can pass a build.
-
-**19.** This slide still requires your own real handwritten photograph. Work the derivation, explain what you checked personally, and state your own verdict. Save the photo as `hand/derivation.jpg` and rebuild. Neither the typeset exercise nor a generated image would meet the requirement.
-
-**20.** End with the economic conclusion and the verification conclusion, not another paper summary. Autonomy and capability jointly matter. A formal proof is informative when its hypotheses and scope are visible.
+**Slide 22.** The required fast check passed, as did the full root build. The semantic preflight stopped with exit 2 because paper_statement_map.json was missing. Four inspected proof endpoints had no sorryAx; that does not supply missing proofs. Zero of six complete continuum propositions are formalized. Measurable matching, equilibrium, sorting, complete source Specs, and semantic audits remain open. End on the value of stating exactly what has been checked.
 
 ## Questions worth rehearsing
 
