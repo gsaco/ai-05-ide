@@ -1,0 +1,9 @@
+{
+  "command": [
+    "lake",
+    "build",
+    "+IT25KnowledgeEconomy"
+  ],
+  "exit_code": 0,
+  "finished_at_utc": "2026-09-17T13:17:01.790560+00:00"
+}

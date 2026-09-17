@@ -1,0 +1,8 @@
+{
+  "python": "3.11.9 | packaged by conda-forge | (main, Apr 19 2024, 18:34:54) [Clang 16.0.6 ]",
+  "numpy": "1.26.4",
+  "scipy": "1.17.0",
+  "matplotlib": "3.8.4",
+  "command": "/Users/gabrielsaco/anaconda3/bin/python analysis/discrete_model.py",
+  "result": "PASS"
+}

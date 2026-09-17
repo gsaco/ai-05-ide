@@ -1,0 +1,12 @@
+Actual output of `lake env lean /tmp/IT25Inspect.lean` (exit 0):
+
+def IT25KnowledgeEconomy.FirmAlgebra.ZeroProfitWageSpec : Prop :=
+∀ (h z a w r : ℝ),
+  0 < h →
+    h < 1 → 0 ≤ z → z < 1 → IT25KnowledgeEconomy.FirmAlgebra.topAutomatedProfit h z a w r = 0 → w = a - h * (1 - z) * r
+'IT25KnowledgeEconomy.FirmAlgebra.zeroProfitWage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IT25KnowledgeEconomy.FirmAlgebra.autonomous_wage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IT25KnowledgeEconomy.Discrete.bottomGain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IT25KnowledgeEconomy.Discrete.laborIncome_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+The query imported both support modules and used #print on ZeroProfitWageSpec and #print axioms on the four names shown. This is diagnostic evidence, not a source-semantic judgment or graph-backed closeout receipt.

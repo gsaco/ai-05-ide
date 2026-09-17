@@ -1,0 +1,81 @@
+{
+  "status": "PASS",
+  "checks": [
+    "primal feasibility",
+    "dual feasibility",
+    "complementary slackness",
+    "strong duality",
+    "unique wages",
+    "handwritten wage values",
+    "output totals at capability 0.3"
+  ],
+  "results": [
+    {
+      "regime": "autonomous",
+      "capability": 0.3,
+      "wages": [
+        0.21428571428571425,
+        0.5714285714285715,
+        2.0
+      ],
+      "wage_ranges": [
+        [
+          0.2142857142857138,
+          0.2142857142857143
+        ],
+        [
+          0.5714285714285716,
+          0.5714285714285724
+        ],
+        [
+          2.0000000000000004,
+          1.9999999999999996
+        ]
+      ],
+      "rent": 0.3,
+      "output": 1.1892857142857143,
+      "labor_income": 0.5892857142857143,
+      "capital_income": 0.6,
+      "compute_used": 2.0,
+      "activities": {
+        "human_0_to_1": 0.55,
+        "AI_worker_for_1": 0.07142857142857134,
+        "AI_worker_for_2": 0.4285714285714286,
+        "AI_independent": 1.5
+      }
+    },
+    {
+      "regime": "nonautonomous",
+      "capability": 0.3,
+      "wages": [
+        0.3,
+        0.65,
+        1.4
+      ],
+      "wage_ranges": [
+        [
+          0.29999999999999993,
+          0.2999999999999999
+        ],
+        [
+          0.65,
+          0.6499999999999999
+        ],
+        [
+          1.4000000000000004,
+          1.4
+        ]
+      ],
+      "rent": 0.0,
+      "output": 0.57,
+      "labor_income": 0.57,
+      "capital_income": 0.0,
+      "compute_used": 0.2,
+      "activities": {
+        "human_0_to_2": 0.15,
+        "human_1_to_2": 0.3,
+        "AI_solver_for_0": 0.4
+      }
+    }
+  ]
+}

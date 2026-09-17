@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "authoritative_source": "https://arxiv.org/abs/2312.05481v11",
+  "authority_reason": "Explicit homework instruction pins arXiv v11 rather than the later journal source.",
+  "source_version": "arXiv v11",
+  "title_page_date": "2025-02-25",
+  "arxiv_submission_timestamp_utc": "2025-02-24T02:28:30Z",
+  "official_published_source": "https://doi.org/10.1086/737233",
+  "official_source_governs_this_run": false,
+  "download_method": "Supported browser downloadMedia from the arXiv v11 View PDF link; local PDF copied byte-for-byte",
+  "source_pdf_sha256": "0b3c727a204f7801a9598dacd7ca7fdb385e21ee6877992ea0eb13c0538d8ebf",
+  "source_pdf_bytes": 739763,
+  "canonical_text": "source.txt",
+  "canonical_text_sha256": "3770e9fc2d06edb45729f82dc2b509f5a0c5abad57890e2a23d3a39bd4249691",
+  "text_extraction": "pdftotext -layout source.pdf source.txt; source PDF hash above",
+  "workflow_commit": "2db7d108cd3a2cb10148974bb2a77856e7d87428",
+  "lean_toolchain": "leanprover/lean4:v4.30.0-rc2",
+  "acceptance_claimed": false
+}

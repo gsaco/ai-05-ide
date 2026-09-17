@@ -1,0 +1,40 @@
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,booktabs,graphicx,listings,array}
+\usetheme{Madrid}
+\usecolortheme{default}
+\definecolor{navy}{HTML}{203849}
+\definecolor{teal}{HTML}{16766D}
+\definecolor{gold}{HTML}{A56B27}
+\definecolor{paper}{HTML}{FCFCFA}
+\definecolor{paleTeal}{HTML}{EAF3F0}
+\definecolor{muted}{RGB}{85,85,85}
+\definecolor{wash}{HTML}{F0F4F5}
+\setbeamercolor{structure}{fg=teal}
+\setbeamercolor{normal text}{fg=navy,bg=paper}
+\setbeamercolor{title}{bg=navy,fg=white}
+\setbeamercolor{frametitle}{bg=navy,fg=white}
+\setbeamercolor{block title}{fg=white,bg=teal}
+\setbeamercolor{block body}{fg=navy,bg=paleTeal}
+\setbeamercolor{alerted text}{fg=gold}
+\setbeamercolor{item}{fg=teal}
+\setbeamercolor{titlelike}{parent=structure}
+\setbeamercolor{title}{bg=navy,fg=white}
+\setbeamercolor{frametitle}{bg=navy,fg=white}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}{}
+\setbeamertemplate{blocks}[default]
+\setbeamertemplate{items}[circle]
+\setbeamertemplate{title page}[default][rounded=false,shadow=false]
+\setbeamersize{text margin left=10mm,text margin right=10mm}
+\setbeamerfont{frametitle}{size=\Large}
+\setbeamerfont{block title}{size=\normalsize}
+\newcommand{\wa}{w^{A}}
+\newcommand{\wn}{w^{N}}
+\newenvironment{points}{\begin{itemize}\setlength{\itemsep}{4mm}}{\end{itemize}}
+\renewcommand{\arraystretch}{1.45}
+\lstdefinelanguage{Lean}{morekeywords={def,theorem,by,have,intro,unfold,noncomputable,calc,using},sensitive=true,morecomment=[l]{--}}
+\lstset{language=Lean,basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,keepspaces=true,showstringspaces=false,keywordstyle=\bfseries\color{teal},commentstyle=\color{muted},backgroundcolor=\color{wash},frame=none,aboveskip=3pt,belowskip=3pt,xleftmargin=3pt,xrightmargin=3pt,framexleftmargin=3pt,literate={ℝ}{{$\mathbb R$}}1 {∀}{{$\forall$}}1 {→}{{$\to$}}1 {≤}{{$\le$}}1 {≠}{{$\ne$}}1 {↔}{{$\leftrightarrow$}}1 {₀}{{$_0$}}1}
+\pdfstringdefDisableCommands{\def\\{ }\def\translate#1{#1}}

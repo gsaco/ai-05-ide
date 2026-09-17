@@ -1,0 +1,79 @@
+% Exactly six Lean frames. No footnotes or footer notes.
+\begin{frame}{Lean 1/6: from economics to a precise statement}
+\begin{center}
+\Large Paper claim $\;\longrightarrow\;$ Lean statement $\;\longrightarrow\;$ Proof
+\end{center}
+\vspace{6mm}
+\begin{points}
+\item A \texttt{Spec : Prop} states objects, assumptions, and conclusion.
+\item Lean checks a proof of that exact formal statement.
+\item Matching the statement to the paper requires a separate audit.
+\end{points}
+\vspace{4mm}
+\begin{block}{Our translation boundary}
+Real-valued algebra and a finite wage formula are formalized.\par
+The continuum equilibrium and its matching structure are not.
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Lean 2/6: the bottom-gain threshold}
+\[0<a<\tfrac13\quad\Longrightarrow\quad
+\left(\tfrac15<\frac{a}{2(1-a)}\iff\tfrac27<a\right).\]
+\lstinputlisting[firstline=21,lastline=30,basicstyle=\ttfamily\footnotesize]{lean/DiscreteCalculations.lean}
+\medskip
+\texttt{bottomWage a} means $a/[2(1-a)]$; the domain is $0<a<1/3$.\par
+\textbf{Build: PASS.} This is the finite wage inequality, not Proposition 5.
+\end{frame}
+
+\begin{frame}[fragile]{Lean 3/6: why the inequality proof works}
+\lstinputlisting[firstline=26,lastline=30]{lean/DiscreteCalculations.lean}
+\vspace{5mm}
+\begin{points}
+\item \texttt{hden}: prove $2(1-a)>0$ from the stated domain.
+\item \texttt{lt\_div\_iff\textsubscript{0}}: clear division without reversing the inequality.
+\item \texttt{constructor}: split ``if and only if'' into two directions.\par
+\texttt{linarith} closes each direction by linear arithmetic.
+\end{points}
+\medskip
+Identities need nonzero denominators; this inequality needs \alert{positivity}.
+
+\end{frame}
+
+\begin{frame}[fragile]{Lean 4/6: paper equation, contract, and checked proof}
+\[n(z)=\frac1{h(1-z)},\qquad n(z)(a-w)-r=0
+\ \Longrightarrow\ w=a-h(1-z)r.\]
+\lstinputlisting[firstline=22,lastline=24,basicstyle=\ttfamily\footnotesize]{lean/FirmAlgebra.lean}
+\lstinputlisting[firstline=28,lastline=32,basicstyle=\ttfamily\footnotesize]{lean/FirmAlgebra.lean}
+\small
+$h$: helping cost; $z$: worker knowledge; $a$: AI capability; $w$: wage; $r$: rent.\par
+\texttt{field\_simp} clears nonzero denominators; \texttt{nlinarith} finishes.\par
+\textbf{\texttt{zeroProfitWage}: PASS.} Arbitrary real $a,w,r$ broaden the source domain; zero profit is assumed and equilibrium is not proved.
+\end{frame}
+
+\begin{frame}{Lean 5/6: a missing assumption changes the claim}
+Dropping $z<1$ allows
+\[h=\tfrac12,\quad z=1,\quad a=\tfrac12,\quad w=1,\quad r=0.\]
+\begin{points}
+\item Lean's real division is total: here $n(z)=0$.
+\item Profit is zero, but the proposed wage identity says $1=1/2$.
+\item The separate counterexample compiles successfully.
+\end{points}
+\vspace{4mm}
+This tests unrestricted algebra; it is not an admissible economic team.
+\end{frame}
+
+\begin{frame}{Lean 6/6: what passed and what remains open}
+\begin{center}
+\begin{tabular}{lp{8cm}}\toprule
+Status & Evidence\\\midrule
+\textcolor{teal}{PASS} & Support proofs, full build, and required fast check.\\
+\textcolor{gold}{STOPPED} & Semantic preflight: missing source statement map.\\
+0 of 6 & Full continuum propositions proved.\\\bottomrule
+\end{tabular}
+\end{center}
+\vspace{4mm}
+Matching, equilibrium, sorting, and source-level audits remain open.
+\begin{block}{What I learned}
+A checked proof is useful when its assumptions and scope are explicit.
+\end{block}
+\end{frame}
