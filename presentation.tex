@@ -1,0 +1,345 @@
+% Compatibility for newer local hyperref on TeX Live 2025 without document metadata.
+\providecommand\IfDocumentMetadataT[1]{}
+\documentclass[aspectratio=169,11pt]{beamer}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,booktabs,graphicx,listings}
+\definecolor{ink}{HTML}{172B3A}
+\definecolor{teal}{HTML}{006D77}
+\definecolor{rust}{HTML}{BC5B24}
+\definecolor{muted}{HTML}{596A77}
+\setbeamercolor{normal text}{fg=ink,bg=white}
+\setbeamercolor{structure}{fg=teal}
+\setbeamercolor{frametitle}{fg=ink}
+\setbeamercolor{alerted text}{fg=rust}
+\setbeamercolor{block title}{fg=teal,bg=teal!7}
+\setbeamercolor{block body}{bg=teal!4}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{\hspace{5mm}\scriptsize Ide \& Talam\`as (2025)\hfill\insertframenumber\hspace{5mm}\vspace{3mm}}
+\setbeamersize{text margin left=8mm,text margin right=8mm}
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+\setbeamerfont{block title}{size=\normalsize,series=\bfseries}
+\newcommand{\src}[1]{\vfill{\scriptsize\color{muted}#1}}
+\newcommand{\take}[1]{\begin{block}{}#1\end{block}}
+\newcommand{\wa}{w^{A}}
+\newcommand{\wn}{w^{N}}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,keepspaces=true,showstringspaces=false,keywordstyle=\color{teal},commentstyle=\color{muted},backgroundcolor=\color{teal!4},frame=none}
+\title{Who gains from AI?}
+\subtitle{Autonomy, capability, and the knowledge economy}
+\author{Ide \& Talam\`as (2025)}
+\date{\small\href{https://github.com/gsaco/ai-05-ide}{github.com/gsaco/ai-05-ide}}
+\pdfstringdefDisableCommands{\def\\{ }\def\translate#1{#1}}
+\begin{document}
+\begin{frame}
+\titlepage
+\vspace{-5mm}
+\centering\small Reading: course PDF, May 20, 2025 (39 pp).\\
+Lean pin: arXiv v11, February 25, 2025 (35 pp).
+\end{frame}
+
+\begin{frame}{Two dimensions govern the distribution of gains}
+\begin{columns}[T]
+\begin{column}{.47\textwidth}
+\begin{block}{Autonomy: what roles can AI take?}
+\textbf{Autonomous:} independent producer, worker, or solver.\\[3mm]
+\textbf{Non-autonomous:} solver / co-pilot only.
+\end{block}
+\end{column}
+\begin{column}{.47\textwidth}
+\begin{block}{Capability: what can AI solve?}
+AI knows solutions up to difficulty $a=z_{AI}<1$.\\[3mm]
+A permitted role need not be profitable at a low capability.
+\end{block}
+\end{column}
+\end{columns}
+\take{The question is who earns more \emph{in equilibrium}, after occupations, matches, wages, and compute rents adjust.}
+\src{Road map: propositions $\to$ three-type derivation $\to$ computation $\to$ Lean boundary.}
+\end{frame}
+
+\begin{frame}{The agent's problem: allocate time and knowledge}
+A worker knows $z$; a solver knows $s>z$; difficulty $x\sim U[0,1]$.
+\[
+\underbrace{h\,n(z)(1-z)}_{\text{solver time used}}=1
+\quad\Longrightarrow\quad n(z)=\frac{1}{h(1-z)}.
+\]
+\[
+\max_{\text{organization},\,z,s}\ \Pi,
+\qquad \Pi_{HH}=n(z)[s-w(z)]-w(s).
+\]
+\begin{itemize}\setlength\itemsep{3mm}
+\item Humans choose income-maximizing roles; compute owners seek rent $r$.
+\item Competitive entry: active firms earn zero profit; all resource markets clear.
+\item Output per worker is $s$, including problems solved without assistance.
+\end{itemize}
+\src{Section 3.1 in both versions. AI replaces the relevant wage by its compute rental rate.}
+\end{frame}
+
+\begin{frame}{The headline results have important conditions}
+\begin{itemize}\setlength\itemsep{3mm}
+\item Unit mass of humans, one unit of time each; observable $z\in[0,1]$ with continuous, strictly positive density $g$.
+\item Uniform independent difficulties, risk neutrality, output price one; competitive firms, no fixed costs, at most two layers.
+\item $0<h<h_0$: no independent human producers before AI.
+\item $a\in[0,1)$; opportunities exceed human-plus-AI production capacity.
+\item Compute abundant relative to human time. For Proposition 6, compare the \emph{same} capability and compute supply.
+\end{itemize}
+\take{The top-winner claim needs both $h<h_0$ and $a<1$. Perfect AI is a different boundary case.}
+\src{Sections 3.1, 3.3, 5.2, and 6. Exact sufficient compute bound in the appendix slide.}
+\end{frame}
+
+\begin{frame}{Proposition 5: bottom winners require capability}
+Define autonomous-AI winners relative to no AI:
+\[
+B=\{z\in[0,a]:\wa(z)>w(z)\},\qquad
+T=\{z\in[a,1]:\wa(z)>w(z)\}.
+\]
+\begin{block}{Under the stated model conditions}
+\[
+B\ne\varnothing\ \Longleftrightarrow\ a>\bar a,
+\qquad \bar a\in\operatorname{int}W;
+\qquad T\ne\varnothing\quad\forall a\in[0,1).
+\]
+\end{block}
+$W$ is the \textbf{pre-AI worker set}. Winners lie at the extremes; humans with knowledge $a$ lose.
+\take{Even ``basic'' AI can help the bottom: $\bar a$ lies \emph{inside} the worker region. Autonomy alone does not settle the sign.}
+\src{Proposition 5: v11 p.24; course PDF p.25. $\wa$ denotes the paper's $w^*$.}
+\end{frame}
+
+\begin{frame}{Proposition 6: free co-pilots still need to be useful}
+\[
+r^N=0,\qquad
+\begin{cases}
+a\le w(0):&\text{AI unused; pre-AI wages and occupations unchanged},\\
+a>w(0):&\text{lowest-knowledge humans use AI advice}.
+\end{cases}
+\]
+\begin{itemize}\setlength\itemsep{3mm}
+\item Near the bottom: $\wn(z)\ge\max\{w(z),\wa(z)\}$, \textbf{strict} if $a>w(0)$.
+\item Some $z>0$ has $\wn(z)\le w(z)$, \textbf{strict} if $a>w(0)$.
+\item Near the top: $\wn(z)\le\wa(z)$, strict away from $z=1$.
+\item Output: $Y^A>Y^N$. Efficiency is relative to the permitted technology.
+\end{itemize}
+\take{The thresholds $w(0)$ and $\bar a$ answer different questions. Neither can be dropped.}
+\src{Proposition 6: v11 p.27; course PDF p.28. Full quantifiers and occupational clauses in the appendix.}
+\end{frame}
+
+\begin{frame}{Why the bottom and top respond differently}
+\begin{columns}[T]
+\begin{column}{.48\textwidth}
+\textbf{Bottom: matching versus income share}
+\[
+w(z)=s-h(1-z)w(s).
+\]
+A worse solver reduces output; a cheaper solver lets the worker retain more. Capability changes the balance.
+\end{column}
+\begin{column}{.48\textwidth}
+\textbf{Top: scale up scarce expertise}
+\[
+\wa(s)=\frac{s-a}{h(1-a)}
+\]
+when supervising AI workers. Low-cost routine work increases the return to human problem-solving.
+\end{column}
+\end{columns}
+\vspace{5mm}
+Autonomous compute has an outside option: $r^A=a$. Co-pilot-only compute can remain idle: $r^N=0$.
+\src{Wage formulas apply to their respective active roles; they are not global wage formulas.}
+\end{frame}
+
+\begin{frame}{A three-type economy we can solve by hand}
+\[
+(z_L,z_M,z_H)=(0,\tfrac12,1),\quad
+(m_L,m_M,m_H)=(\tfrac{11}{20},\tfrac3{10},\tfrac3{20}),\quad
+h=\tfrac12,\quad\mu=2.
+\]
+Let wages be $(u,v,t)$. Three active human teams imply
+\[
+u+\tfrac12v=\tfrac12,\qquad u+\tfrac12t=1,\qquad v+\tfrac14t=1.
+\]
+\[
+t-v=1\quad\Rightarrow\quad
+\boxed{(u,v,t)=(\tfrac15,\tfrac35,\tfrac85)}.
+\]
+Worker masses $(L\!\to\!M,L\!\to\!H,M\!\to\!H)=(.32,.23,.14)$ clear all three markets; $Y_0=.53$.
+\take{This is a finite-type analogue. It changes the source's density assumption and does not inherit its continuum theorems.}
+\end{frame}
+
+\begin{frame}{Autonomous AI: derive an equilibrium branch}
+Take $0<a<\tfrac13$. Low humans work with middle solvers; the remaining middle humans and all high humans supervise AI.
+\[
+r^A=a,\qquad
+t=\frac{1-a}{(1-a)/2}=2,\qquad
+v=\frac{\frac12-a}{(1-a)/2}=\frac{1-2a}{1-a}.
+\]
+\[
+u=\tfrac12-\tfrac12v=\boxed{\frac{a}{2(1-a)}}.
+\]
+\begin{itemize}\setlength\itemsep{2mm}
+\item Low workers use $.55/2=.275$ middle solvers, leaving $.025$.
+\item AI workers use $7/[20(1-a)]<2$ compute; the rest produces independently.
+\item The other no-entry inequalities hold; $v>\tfrac12$ on this branch.
+\end{itemize}
+\src{An allocation plus a feasible no-profit price vector is the equilibrium certificate.}
+\end{frame}
+
+\begin{frame}{The threshold is visible in three lines of algebra}
+\[
+\wa_L>w_L
+\quad\Longleftrightarrow\quad
+\frac{a}{2(1-a)}>\frac15
+\]
+\[
+\Longleftrightarrow\quad 5a>2(1-a)
+\quad\Longleftrightarrow\quad\boxed{a>\frac27}.
+\]
+Multiplication preserves the inequality because $1-a>0$.
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+Same autonomy; different capability & $a=1/5$ & $a=3/10$\\
+\midrule
+Lowest wage & $1/8<1/5$ & $3/14>1/5$\\
+Verdict & loses & gains\\
+\bottomrule
+\end{tabular}
+\end{center}
+\src{Both values lie in $0<a<1/3$. Equality at $a=2/7$ is not a strict gain. This is not the continuum's numerical threshold.}
+\end{frame}
+
+\begin{frame}{Co-pilot-only AI: solve the same economy at $a=.4$}
+Spare compute is idle, so $r^N=0$. Low humans using AI earn $u=a=.4$.
+\[
+u+\tfrac12t=1\ \Rightarrow\ t=1.2,
+\qquad v+\tfrac14t=1\ \Rightarrow\ v=.7.
+\]
+\begin{columns}[T]
+\begin{column}{.48\textwidth}
+\textbf{Allocation}
+\begin{itemize}
+\item $.30$ middle workers use high solvers.
+\item $.15$ low workers use high solvers.
+\item $.40$ low workers use AI advice.
+\end{itemize}
+\end{column}
+\begin{column}{.48\textwidth}
+\textbf{Income comparison}
+\[
+(.2,.6,1.6)\longrightarrow(.4,.7,1.2).
+\]
+Bottom and middle gain; top loses.\\[2mm]
+$Y^N=.61$; all of it is labor income.
+\end{column}
+\end{columns}
+\src{At $a=.2$, the reported non-autonomous equilibrium remains the pre-AI one: the capability boundary matters.}
+\end{frame}
+
+\begin{frame}{Computation checks prices and quantities together}
+\centering
+\includegraphics[width=\textwidth]{figures/discrete_wages.pdf}
+\vspace{2mm}
+\small Seven equilibria: no AI and two regimes at three capabilities.\\[2mm]
+Checked resource feasibility, no profitable entry, complementary slackness,\\
+primal--dual equality, wage uniqueness, and $Y=L+\mu r$.
+\src{Reproduce: \texttt{python3 analysis/discrete\_model.py}. Lines connect discrete points only; they do not represent a continuum.}
+\end{frame}
+
+\begin{frame}{Higher output is not the same as higher wages for all}
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule
+Regime at $a=.4$ & Labor $L$ & Capital $\mu r$ & Output $Y$\\
+\midrule
+No AI & $.5300$ & $0$ & $.5300$\\
+Co-pilot only & $.6100$ & $0$ & $.6100$\\
+Autonomous & $.5875$ & $.8000$ & $1.3875$\\
+\bottomrule
+\end{tabular}
+\end{center}
+\vspace{2mm}
+Every co-pilot-only allocation is feasible with autonomy. For $a>0$, using its idle compute $\delta>0$ independently adds $a\delta>0$ output.
+\take{Autonomy raises total output here while total human wage income is lower than under co-pilots. Track compute-owner income separately.}
+\src{At $a=0$, this strictness argument fails; AI workers assisted by humans supply the separate mechanism.}
+\end{frame}
+
+\input{analysis/lean-slides.tex}
+
+\begin{frame}{The claim to challenge on a handwritten page}
+\IfFileExists{hand/derivation.jpg}{%
+\begin{columns}[T]
+\begin{column}{.58\textwidth}\centering\includegraphics[width=\linewidth,height=.70\textheight,keepaspectratio]{hand/derivation.jpg}\end{column}
+\begin{column}{.39\textwidth}
+Autonomy held fixed:
+\[\frac{a}{2(1-a)}>\frac15\iff a>\frac27.\]
+\textbf{Verdict:} capability changes the sign of the bottom wage effect.\\[3mm]
+This proves a finite-branch claim, not Proposition 5 in the continuum.
+\end{column}\end{columns}
+}{%
+\begin{block}{Genuine photograph still required}
+Write and check the derivation, then save the photograph as \texttt{hand/derivation.jpg}. Recompile to display it here.
+\end{block}
+\[
+\frac{a}{2(1-a)}>\frac15\ \Longleftrightarrow\ a>\frac27,
+\qquad 0<a<\frac13.
+\]
+\textbf{Proposed verdict:} reject the autonomy-only gloss. Check the positive denominator, strict inequality, and equilibrium branch yourself.\\[3mm]
+\small A typeset equation is not evidence that the student performed a hand derivation.
+}
+\end{frame}
+
+\begin{frame}{What the checks teach us}
+\begin{enumerate}\setlength\itemsep{4mm}
+\item \textbf{Bottom:} capability crosses a threshold, even with autonomy fixed.
+\item \textbf{Top:} autonomous AI scales scarce expertise; the source result needs $h<h_0$ and $a<1$.
+\item \textbf{Output:} more feasible uses of compute raise output, without making every human better off.
+\item \textbf{Verification:} an algebraic proof, an equilibrium computation, and a continuum theorem are different achievements.
+\end{enumerate}
+\take{The defensible conclusion is a two-dimensional taxonomy, with domains and inequalities stated explicitly.}
+\end{frame}
+
+\appendix
+\pdfbookmark{Appendix}{appendix}
+\begin{frame}{Reference: complete Proposition 6 clauses}
+\small
+The non-autonomous equilibrium is unique, efficient, maximizes labor income within that technology, and $r^N=0$.
+If $a\le w(0)$, AI is unused. If $a>w(0)$,
+\[
+W_a^N\preceq W_p^N\cup I^N\cup S_p^N;
+\qquad W_a^N,W_p^N,S_p^N\ne\varnothing
+\]
+and only $I^N$ may be empty. In either case:
+\begin{align*}
+&Y^A>Y^N;\\
+&\exists z\in(0,1]:\ \wn(z)\le w(z)\quad(\text{strict if }a>w(0));\\
+&\exists\epsilon>0\ \forall z\in[0,\epsilon):\ \wn(z)\ge\max\{w(z),\wa(z)\}\\
+&\hspace{52mm}(\text{strict if }a>w(0));\\
+&\exists\epsilon>0\ \forall z\in(1-\epsilon,1]:\ \wn(z)\le\wa(z)\quad(\text{strict if }z\ne1).
+\end{align*}
+\src{Source: v11 p.27 / course p.28. $W_a$: AI-assisted; $W_p$: human-assisted; $I$: independent; $S_p$: human solvers.}
+\end{frame}
+
+\begin{frame}[fragile]{Reference: Lean checks the finite strict threshold}
+\[
+0<a<\tfrac13\quad\Longrightarrow\quad
+\left(\frac15<\frac{a}{2(1-a)}\ \Longleftrightarrow\ \frac27<a\right).
+\]
+\lstinputlisting[basicstyle=\ttfamily\footnotesize,firstline=21,lastline=30,literate={ℝ}{{$\mathbb R$}}1 {∀}{{$\forall$}}1 {→}{{$\to$}}1 {↔}{{$\leftrightarrow$}}1 {₀}{{$_0$}}1]{lean/DiscreteCalculations.lean}
+\small
+\texttt{hden} licenses inequality-preserving division; \texttt{constructor} proves both directions. This is candidate-wage algebra; its equilibrium interpretation is separate.
+\src{\texttt{Discrete.bottomGain}: focused Lean build PASS. Original finite example; not Proposition 5 of the source.}
+\end{frame}
+
+\begin{frame}{Reference: compute, source versions, and reproducibility}
+A sufficient abundance condition is
+\[
+\mu>\int_0^a h(1-z)\,dG(z)+\frac{1-G(a)}{h(1-a)}.
+\]
+\small
+\begin{itemize}\setlength\itemsep{2mm}
+\item Course PDF: May 20, 2025, 39 pages; arXiv v12 stamp.
+\item Formalization pin: arXiv v11, title date February 25, 2025; submission February 24; 35 pages.
+\item Proposition 5: v11 p.24 / course p.25. Proposition 6: v11 p.27 / course p.28.
+\item Full algebra and computational certificates: \texttt{analysis/}. Raw conversation: \texttt{prompts.md}. Actual formalization check: \texttt{checks/}.
+\item Citation: Enrique Ide and Eduard Talam\`as (2025), \emph{Artificial Intelligence in the Knowledge Economy}.
+\end{itemize}
+\src{\href{https://arxiv.org/abs/2312.05481v11}{arxiv.org/abs/2312.05481v11}\quad\href{https://github.com/gsaco/ai-05-ide}{github.com/gsaco/ai-05-ide}}
+\end{frame}
+\end{document}

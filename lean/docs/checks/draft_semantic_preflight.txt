@@ -1,0 +1,8 @@
+Command executed from AppliedModelingLib root:
+PYTHONPATH=. python3 scripts/draft_semantic_preflight.py --paper IT25KnowledgeEconomy
+
+Observed output:
+draft semantic preflight refused: draft semantic preflight cannot read paper_statement_map.json
+
+Exit code: 2
+This records an actually executed command. No semantic graph or acceptance receipt was issued.

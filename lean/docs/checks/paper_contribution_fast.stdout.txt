@@ -1,0 +1,6 @@
++ lake build +IT25KnowledgeEconomy.PaperInterface
+✔ [858/860] Built IT25KnowledgeEconomy.MainTheorems (1.3s)
+✔ [859/860] Built IT25KnowledgeEconomy.Assumptions (1.3s)
+✔ [860/860] Built IT25KnowledgeEconomy.PaperInterface (1.3s)
+Build completed successfully (860 jobs).
++ git diff --check -- papers/IT25KnowledgeEconomy papers/IT25KnowledgeEconomy.lean lakefile.toml ':(exclude)papers/IT25KnowledgeEconomy/source/'

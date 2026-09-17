@@ -1,0 +1,236 @@
+[
+  {
+    "regime": "none",
+    "capability": 0,
+    "wages": [
+      0.19999999999999996,
+      0.6,
+      1.6
+    ],
+    "wage_ranges": [
+      [
+        0.1999999999999999,
+        0.2000000000000001
+      ],
+      [
+        0.5999999999999999,
+        0.6000000000000002
+      ],
+      [
+        1.5999999999999999,
+        1.6000000000000005
+      ]
+    ],
+    "rent": 0.0,
+    "output": 0.53,
+    "labor_income": 0.53,
+    "capital_income": 0.0,
+    "compute_used": 0.0,
+    "activities": {
+      "human_0_to_1": 0.32,
+      "human_0_to_2": 0.23000000000000004,
+      "human_1_to_2": 0.13999999999999999
+    }
+  },
+  {
+    "regime": "autonomous",
+    "capability": 0.2,
+    "wages": [
+      0.12500000000000006,
+      0.7499999999999999,
+      2.0
+    ],
+    "wage_ranges": [
+      [
+        0.12500000000000305,
+        0.12499999999999988
+      ],
+      [
+        0.7500000000000001,
+        0.7499999999999939
+      ],
+      [
+        2.0,
+        1.999999999999999
+      ]
+    ],
+    "rent": 0.2,
+    "output": 0.9937499999999999,
+    "labor_income": 0.59375,
+    "capital_income": 0.4,
+    "compute_used": 2.0,
+    "activities": {
+      "human_0_to_1": 0.55,
+      "AI_worker_for_1": 0.06249999999999992,
+      "AI_worker_for_2": 0.37499999999999994,
+      "AI_independent": 1.5625
+    }
+  },
+  {
+    "regime": "nonautonomous",
+    "capability": 0.2,
+    "wages": [
+      0.2,
+      0.6,
+      1.6
+    ],
+    "wage_ranges": [
+      [
+        0.2,
+        0.2000000000000001
+      ],
+      [
+        0.5999999999999999,
+        0.6
+      ],
+      [
+        1.5999999999999999,
+        1.6000000000000005
+      ]
+    ],
+    "rent": 0.0,
+    "output": 0.53,
+    "labor_income": 0.53,
+    "capital_income": 0.0,
+    "compute_used": 0.2,
+    "activities": {
+      "human_0_to_2": 0.15,
+      "human_1_to_2": 0.3,
+      "AI_solver_for_0": 0.4
+    }
+  },
+  {
+    "regime": "autonomous",
+    "capability": 0.4,
+    "wages": [
+      0.25,
+      0.5,
+      2.0
+    ],
+    "wage_ranges": [
+      [
+        0.25000000000000167,
+        0.24999999999999986
+      ],
+      [
+        0.5,
+        0.49999999999999667
+      ],
+      [
+        2.0,
+        2.0000000000000004
+      ]
+    ],
+    "rent": 0.4,
+    "output": 1.3875,
+    "labor_income": 0.5874999999999999,
+    "capital_income": 0.8,
+    "compute_used": 2.0,
+    "activities": {
+      "independent_1": 0.024999999999999967,
+      "human_0_to_1": 0.55,
+      "AI_worker_for_2": 0.5,
+      "AI_independent": 1.5
+    }
+  },
+  {
+    "regime": "nonautonomous",
+    "capability": 0.4,
+    "wages": [
+      0.4,
+      0.7,
+      1.2
+    ],
+    "wage_ranges": [
+      [
+        0.4,
+        0.39999999999999997
+      ],
+      [
+        0.7000000000000001,
+        0.7
+      ],
+      [
+        1.2000000000000002,
+        1.1999999999999997
+      ]
+    ],
+    "rent": 0.0,
+    "output": 0.61,
+    "labor_income": 0.61,
+    "capital_income": 0.0,
+    "compute_used": 0.2,
+    "activities": {
+      "human_0_to_2": 0.15,
+      "human_1_to_2": 0.3,
+      "AI_solver_for_0": 0.4
+    }
+  },
+  {
+    "regime": "autonomous",
+    "capability": 0.8,
+    "wages": [
+      0.4,
+      0.6000000000000001,
+      2.0
+    ],
+    "wage_ranges": [
+      [
+        0.40000000000000085,
+        0.39999999999999947
+      ],
+      [
+        0.6000000000000004,
+        0.5999999999999985
+      ],
+      [
+        2.000000000000017,
+        1.9999999999999973
+      ]
+    ],
+    "rent": 0.8,
+    "output": 2.3,
+    "labor_income": 0.7,
+    "capital_income": 1.6,
+    "compute_used": 2.0,
+    "activities": {
+      "AI_solver_for_0": 0.55,
+      "AI_solver_for_1": 0.3,
+      "AI_worker_for_2": 1.5000000000000002,
+      "AI_independent": 0.14999999999999974
+    }
+  },
+  {
+    "regime": "nonautonomous",
+    "capability": 0.8,
+    "wages": [
+      0.8,
+      0.8,
+      1.0
+    ],
+    "wage_ranges": [
+      [
+        0.8,
+        0.8
+      ],
+      [
+        0.8,
+        0.8
+      ],
+      [
+        1.0,
+        1.0000000000000002
+      ]
+    ],
+    "rent": 0.0,
+    "output": 0.8300000000000001,
+    "labor_income": 0.8300000000000001,
+    "capital_income": 0.0,
+    "compute_used": 0.35000000000000003,
+    "activities": {
+      "independent_2": 0.15,
+      "AI_solver_for_0": 0.55,
+      "AI_solver_for_1": 0.3
+    }
+  }
+]

@@ -1,0 +1,213 @@
+{
+  "source_clone_commit": "2db7d108cd3a2cb10148974bb2a77856e7d87428",
+  "original_folder": "/Users/gabrielsaco/Documents/GitHub/AppliedModelingLib-ai05/papers/IT25KnowledgeEconomy",
+  "destination": "lean/",
+  "complete_tree_identical": true,
+  "file_count": 34,
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 347,
+      "sha256": "653f775cd3460242c7eab7b4965aade3c3ad0bdb1938bd2908935394184756f1",
+      "git_ignored": false
+    },
+    {
+      "path": "Assumptions.lean",
+      "bytes": 1041,
+      "sha256": "933b3d28f4fb63c56d48e31faed187402df948745e30e361d6e657a6ef1ba08b",
+      "git_ignored": false
+    },
+    {
+      "path": "DiscreteCalculations.lean",
+      "bytes": 2645,
+      "sha256": "aff748d82a9e97b1db922eab08f2709658e6d25f730cc9b53af714d9d4e8bb63",
+      "git_ignored": false
+    },
+    {
+      "path": "FirmAlgebra.lean",
+      "bytes": 2289,
+      "sha256": "e4dce788ca4f075fc9b8a5f3f2e3ae2f74611c9e7f90100f7c77c9bfe642a3f3",
+      "git_ignored": false
+    },
+    {
+      "path": "MainTheorems.lean",
+      "bytes": 1058,
+      "sha256": "12fa3d64aec54f3e6725d610aa8003f30de2cb0d7acd019cbcb9270c9989d986",
+      "git_ignored": false
+    },
+    {
+      "path": "PaperInterface.lean",
+      "bytes": 4452,
+      "sha256": "7f24b6bad7037119854cc26472d7ecacd61984c12aa143f61d1c224119e9997f",
+      "git_ignored": false
+    },
+    {
+      "path": "ProofInterface.lean",
+      "bytes": 471,
+      "sha256": "8a9a2d4e9dc96bc1076b9858d5831986fc1fb74d72e57b99dfd516e41b13afdb",
+      "git_ignored": false
+    },
+    {
+      "path": "README.md",
+      "bytes": 1612,
+      "sha256": "8edf3dc7a60b88d806305cdbae548ab950ecc45a3e96d63c163a1084c40e5064",
+      "git_ignored": false
+    },
+    {
+      "path": "audit/assumption_match_llm.json",
+      "bytes": 2050,
+      "sha256": "1d53a742192a1141ee00289c839b153a2c30ed6ff8f534156beca0264639958e",
+      "git_ignored": false
+    },
+    {
+      "path": "audit/defect_support_match_llm.json",
+      "bytes": 3052,
+      "sha256": "1c55fbf0ec7630a3d6f78cf408a61e7f9f357170384ddeee976190d1aff4e741",
+      "git_ignored": false
+    },
+    {
+      "path": "audit/library_semantic_review.json",
+      "bytes": 680,
+      "sha256": "fdc6ad147ce51e22bb2bb5674ff23986a883273f3038c0162e8be94dbb4aef6d",
+      "git_ignored": false
+    },
+    {
+      "path": "audit/source_proof_fidelity.json",
+      "bytes": 3539,
+      "sha256": "394616cd63d16c02616790e6d7bf1959ab8c9765071c2bcc1ab4c4089158b765",
+      "git_ignored": false
+    },
+    {
+      "path": "audit/source_provenance.json",
+      "bytes": 1035,
+      "sha256": "81bcca72d2650b4b4cc84ac5de1278ab33e5a873979f509ec0c2b716fed3c0a7",
+      "git_ignored": false
+    },
+    {
+      "path": "audit/v11_raw_source_spec_screening.json",
+      "bytes": 769,
+      "sha256": "7be527cb777ef75e1475f8c3fa44296e0ae3108c9d33d381f502fe903218480c",
+      "git_ignored": false
+    },
+    {
+      "path": "audit/v11_source_map_preparation_config.json",
+      "bytes": 1287,
+      "sha256": "536384031fef2068904653bfa9d0232176b6bb4799baf2a002b47052d9854041",
+      "git_ignored": false
+    },
+    {
+      "path": "docs/AGENT_RUN_PROMPTS.md",
+      "bytes": 2699,
+      "sha256": "b82d8938b25a041727964a3bbebc2552496be1011d2e05aa0c1399c01f8f157d",
+      "git_ignored": false
+    },
+    {
+      "path": "docs/AGENT_SOURCE_AUDIT.md",
+      "bytes": 1776,
+      "sha256": "1aa75aa7c9923c0dbfb8f0a9bb6c4c74a5f302f5227408120f90e01cf624cb79",
+      "git_ignored": false
+    },
+    {
+      "path": "docs/FORMALIZATION_NOTES.md",
+      "bytes": 8574,
+      "sha256": "9a5b226b3d8cb767eb81c7323b51eed99f55988315a817da68fbc6e72a5b5f3a",
+      "git_ignored": false
+    },
+    {
+      "path": "docs/FORMALIZATION_PLAN.md",
+      "bytes": 15608,
+      "sha256": "c079e460e1041f7e27964fe334bc9bf215c19da226ae48790394e3cf6197b0e9",
+      "git_ignored": false
+    },
+    {
+      "path": "docs/FORMALIZATION_WORKING_MEMO.md",
+      "bytes": 815,
+      "sha256": "cf86e81ec25d77dbe9595424157dcab4c85b19f33e1db4ef925aa69cfb027011",
+      "git_ignored": false
+    },
+    {
+      "path": "docs/RUN_REPORT.md",
+      "bytes": 6901,
+      "sha256": "ce319ea5df17f48acfa7cf7ae4f9b0a229a5667be49931d70d51c8c7b83791fc",
+      "git_ignored": false
+    },
+    {
+      "path": "docs/SOURCE_ONLY_INTAKE.md",
+      "bytes": 14318,
+      "sha256": "7374f536552da450557a5a762a94bae0f2dd8eea6ff3913c9cd3c6d5a7d414f6",
+      "git_ignored": false
+    },
+    {
+      "path": "docs/checks/axiom_inspection.txt",
+      "bytes": 946,
+      "sha256": "d823ef648de6fec670d4a08029c3fb62643833f24a4d359b9e20b332777a0ed6",
+      "git_ignored": false
+    },
+    {
+      "path": "docs/checks/draft_semantic_preflight.txt",
+      "bytes": 356,
+      "sha256": "de13f7b0b4c74e1496f08024bf734df5aee5e62845114318b83ef7f7a8bbe7b9",
+      "git_ignored": false
+    },
+    {
+      "path": "docs/checks/paper_contribution_fast.json",
+      "bytes": 417,
+      "sha256": "1849ceb3872a4d5890b7f238d36e23917f530d5a7add00f0483cd50875a58d6f",
+      "git_ignored": false
+    },
+    {
+      "path": "docs/checks/paper_contribution_fast.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_ignored": false
+    },
+    {
+      "path": "docs/checks/paper_contribution_fast.stdout.txt",
+      "bytes": 420,
+      "sha256": "f24997edc4349280ae520156cd985df4faae253cf0aaed2d9502466267654e17",
+      "git_ignored": false
+    },
+    {
+      "path": "docs/checks/paper_root_build.json",
+      "bytes": 151,
+      "sha256": "1a1b1e47de9ed5a1d3a904376f237164943b8ad1b7b6de1cb57b4be1898a6ae4",
+      "git_ignored": false
+    },
+    {
+      "path": "docs/checks/paper_root_build.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_ignored": false
+    },
+    {
+      "path": "docs/checks/paper_root_build.stdout.txt",
+      "bytes": 41,
+      "sha256": "b10a20098b70fc255558bfb4187f6dd0055b109dba0e7f6680dad9467b60a145",
+      "git_ignored": false
+    },
+    {
+      "path": "review-dashboard.sh",
+      "bytes": 263,
+      "sha256": "f2e587a1a991bbb3fdb76b1b3d5433c64578a944d02a1d4d7c47396e20147f9f",
+      "git_ignored": false
+    },
+    {
+      "path": "source.pdf",
+      "bytes": 739763,
+      "sha256": "0b3c727a204f7801a9598dacd7ca7fdb385e21ee6877992ea0eb13c0538d8ebf",
+      "git_ignored": true
+    },
+    {
+      "path": "source.txt",
+      "bytes": 119264,
+      "sha256": "3770e9fc2d06edb45729f82dc2b509f5a0c5abad57890e2a23d3a39bd4249691",
+      "git_ignored": true
+    },
+    {
+      "path": "status.json",
+      "bytes": 10072,
+      "sha256": "f9c05920a3c7c9f9a1e1b2289adb4219330bf5a829fad2e0e35d8688bb7f8297",
+      "git_ignored": false
+    }
+  ]
+}

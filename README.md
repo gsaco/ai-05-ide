@@ -1,1 +1,18 @@
-# ai-05-ide
+# AI in the knowledge economy: autonomy **and** capability
+
+**Ide, Enrique, and Eduard Talamàs (2025), _Artificial Intelligence in the Knowledge Economy_.** Read: the course PDF dated May 20, 2025 (39 pp), with Propositions 5–6 cross-checked against [arXiv v11, February 25, 2025](https://arxiv.org/abs/2312.05481v11) (35 pp), the Lean pin. [Repository](https://github.com/gsaco/ai-05-ide).
+
+**Question.** Who gains when scalable AI enters an economy where workers encounter problems and knowledgeable solvers handle exceptions? Autonomy determines AI's permitted roles; capability determines which problems it solves. Both affect wages.
+
+**The agent's problem.** Humans maximize income; competitive firms maximize profit over independent production and two-layer teams. A worker with knowledge z fails with probability 1−z; each request uses h units of solver time. Thus n(z)=1/[h(1−z)], and a human team with solver s earns n(z)[s−w(z)]−w(s). AI substitutes rental r for its wage. Free entry makes active firms' profits zero; labor and compute markets clear.
+
+**Conditions.** The source economy has a unit mass of humans, one unit of time each, observable z∈[0,1] with a continuous strictly positive density, independent uniform problem difficulty, risk neutrality, output price one, no fixed costs, complete information, competition, and at most two layers. Helping costs satisfy 0<h<h₀, so there are no independent producers before AI. AI knowledge a=z_AI∈[0,1); perfect AI is excluded. Production opportunities exceed human-plus-AI production capacity. Compute is abundant relative to human time; a sufficient condition is μ>∫₀ᵃ h(1−z)dG(z)+[1−G(a)]/[h(1−a)]. Proposition 6 holds capability, compute supply, and the two-layer restriction fixed across autonomy regimes.
+
+**Main results.** With w, wᴬ, wᴺ denoting no-AI, autonomous, and non-autonomous wages:
+
+- **Proposition 5:** autonomous AI has bottom winners **iff a>ā**, where ā lies inside the *pre-AI worker set*. Top winners exist for every a<1 under the conditions above. Winners form bottom and top intervals; the human with knowledge a loses. “Basic AI” can therefore help the bottom: its threshold is inside the worker region, not at the worker–solver boundary.
+- **Proposition 6:** the non-autonomous equilibrium is unique, efficient within its feasible technology, maximizes labor income there, and has rᴺ=0. If a≤w(0), AI is unused and wages/occupations are unchanged. If a>w(0), the least knowledgeable use AI advice; AI-assisted workers, human-assisted workers, and human solvers are nonempty, while independent humans may be absent. Near zero, wᴺ≥max{w,wᴬ}, strictly when a>w(0). Some z>0 has wᴺ(z)≤w(z), strictly under that same condition. Near one, wᴺ≤wᴬ, strictly away from z=1. Total output satisfies Yᴬ>Yᴺ. These are local endpoint comparisons, not a ranking for every human.
+
+**What is checked here.** An original three-type economy has h=½, types (0,½,1), masses (.55,.30,.15), and μ=2. Algebra gives pre-AI wages (.2,.6,1.6); on the autonomous branch 0<a<⅓ the lowest wage is a/[2(1−a)], so its strict-gain threshold is a>2/7. This finite example illustrates the mechanism; it does **not** prove the continuum propositions. The program verifies allocations, no profitable entry, duality, wage uniqueness, and factor-income accounting. See [derivation](analysis/derivation.md), [results](analysis/results.csv), and [presentation](presentation.pdf).
+
+**Submission status.** `lean/` is the unmodified whole-folder copy of this run; the required fast check passed, while **0/6 continuum propositions are proved**. See the [check record](checks/lean-check.md) and [run report](lean/docs/RUN_REPORT.md). `prompts.md` preserves raw user/assistant messages. A genuine handwritten photo is **still required**: follow [hand/README.md](hand/README.md), save `hand/derivation.jpg`, and recompile. Template provenance and version pagination are in [paper/README.md](paper/README.md).

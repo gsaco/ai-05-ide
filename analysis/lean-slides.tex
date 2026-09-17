@@ -1,0 +1,27 @@
+\begin{frame}[fragile]{Lean checks the zero-profit wage calculation}
+\small
+\textbf{Paper equation} (Section 3.1):
+\[
+n(z)=\frac{1}{h(1-z)},\quad n(z)(a-w)-r=0
+\quad\Longrightarrow\quad w=a-h(1-z)r.
+\]
+\vspace{-3mm}
+\lstinputlisting[basicstyle=\ttfamily\footnotesize,firstline=22,lastline=32,literate={ℝ}{{$\mathbb R$}}1 {∀}{{$\forall$}}1 {→}{{$\to$}}1 {≤}{{$\le$}}1 {≠}{{$\ne$}}1]{lean/FirmAlgebra.lean}
+\vspace{0mm}
+\textbf{Interpretation:} real scalars encode wages, rent, knowledge, and helping cost. The \texttt{have} lines justify clearing denominators; \texttt{nlinarith} closes the algebra.
+\src{\texttt{FirmAlgebra.zeroProfitWage}: focused Lean build PASS. This verifies the conditional algebraic implication.}
+\end{frame}
+
+\begin{frame}{The translation boundary is part of the result}
+\begin{itemize}\setlength\itemsep{3mm}
+\item \textbf{Checked:} zero-profit wage algebra and its $r=a$ / $r=0$ specializations; the finite branch's strict threshold $a>2/7$.
+\item \textbf{Scalar generalization:} the displayed theorem lets $a,w,r\in\mathbb R$. Economic use also requires admissible capability, a suitable worker, and an active team.
+\item \textbf{Still unproved in Lean:} equilibrium existence, clearing, sorting, uniqueness, and the continuum Propositions 1--6. Neither $r=a$ nor the candidate wage branch is derived from equilibrium in Lean.
+\end{itemize}
+\begin{block}{Actual run status}
+Focused support-module build: \textbf{PASS}.\\
+Required \texttt{check IT25KnowledgeEconomy --fast}: \textbf{PASS (exit 0)}.\\
+This checks the build and whitespace; \textbf{0/6 source propositions proved}.
+\end{block}
+\src{A checked support lemma is not a completed paper formalization. See \texttt{lean/} and \texttt{checks/lean-check.md}.}
+\end{frame}
